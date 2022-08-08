@@ -10,60 +10,67 @@ import Zoom from '@mui/material/Zoom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Copyright from './test/Copyright';
 import TabsRouter from './router/Test';
+import Login from './pages/login/Login';
+import routerConfig from './router/RouterConfig';
+import Home from './pages/home/Home';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
 function MyApp() {
+
+
     const theme = useTheme();
     const colorMode = React.useContext(ColorModeContext);
+
     return (
-        <Container maxWidth="sm">
+        <Home></Home>
+            // <Login />
+        //     <Container maxWidth="sm">
+        //     {/* <TabsRouter></TabsRouter> */}
+        //     <Stack spacing={2}>
+        //         <Box
+        //             sx={{
+        //                 display: 'flex',
+        //                 width: '100%',
+        //                 alignItems: 'center',
+        //                 justifyContent: 'center',
+        //                 bgcolor: 'background.default',
+        //                 color: 'text.primary',
+        //                 borderRadius: 1,
+        //                 p: 3,
+        //             }}
+        //         >
 
-            {/* <TabsRouter></TabsRouter> */}
-            <Stack spacing={2}>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        width: '100%',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        bgcolor: 'background.default',
-                        color: 'text.primary',
-                        borderRadius: 1,
-                        p: 3,
-                    }}
-                >
-
-                    {theme.palette.mode} mode
-                    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                    </IconButton>
-
-
-                </Box>
-
-                <Typography variant="h4" component="h1" gutterBottom>
-                    Vite.js example
-                </Typography>
-
-                <ProTip />
-
-                <Button variant='text'>Text</Button>
-                <Button variant='contained' disableElevation>Text</Button>
-                <Button variant='outlined' >Text</Button>
-                <Tooltip title='delete' placement='top' arrow TransitionComponent={Zoom}>
-                    <IconButton>
-                        <DeleteIcon color='success'></DeleteIcon>
-                    </IconButton>
-                </Tooltip>
+        //             {theme.palette.mode} mode
+        //             <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+        //                 {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        //             </IconButton>
 
 
-                <Copyright />
+        //         </Box>
 
-            </Stack>
+        //         <Typography variant="h4" component="h1" gutterBottom>
+        //             Vite.js example
+        //         </Typography>
+
+        //         <ProTip />
+
+        //         <Button variant='text'>Text</Button>
+        //         <Button variant='contained' disableElevation>Text</Button>
+        //         <Button variant='outlined' >Text</Button>
+        //         <Tooltip title='delete' placement='top' arrow TransitionComponent={Zoom}>
+        //             <IconButton>
+        //                 <DeleteIcon color='success'></DeleteIcon>
+        //             </IconButton>
+        //         </Tooltip>
 
 
-        </Container >
+        //         <Copyright />
+
+        //     </Stack>
+
+
+        // </Container >
     );
 }
 
