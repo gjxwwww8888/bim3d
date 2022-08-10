@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import Logo from './Logo'
+import Menu from './Menu'
 
 const Header = styled.div`
     display: flex;
@@ -16,37 +18,20 @@ const Header = styled.div`
 
 const Layout = styled.div`
     display: flex;
-    background: yellow;
+    /* background: yellow; */
     height: 32px;
     width: 80%;
     flex-direction: row;
 `
 
-const LogoBox = styled.div`
-    background: red;
-    height: 100%;
-    width: 100%;
-`
-const MenuBox = styled.div`
-    background: blue;
-    height: 100%;
-    width: 100%;
-`
-
-
-const HeaderBox:React.FC = () => {
+const HeaderBox: React.FC = () => {
     return (
         <>
-           <Header>
+            <Header>
                 <Layout>
-                    <LogoBox>
-
-                    </LogoBox>
-                    <MenuBox>
-
-                    </MenuBox>
+                    <Logo />
+                    <Menu />
                 </Layout>
-
             </Header>
         </>
     )

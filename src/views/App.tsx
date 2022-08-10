@@ -1,6 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 import Expenses from './pages/Expenses';
 import Home from './pages/Home/Index';
+import Login from './pages/Login';
 
 
 function DD() {
@@ -35,6 +36,10 @@ const App = () => {
     {
       path:'/expenses',
       element:<Expenses/>
+    },
+    {
+      path:'/login',
+      element:<Login/>
     }
   ]
 
