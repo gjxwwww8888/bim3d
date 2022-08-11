@@ -1,3 +1,4 @@
+import BIM from '@/editor';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -36,20 +37,42 @@ const LoginBtn = styled.button`
 const menudata = [
     { id: "5", lable: '登录' },
     { id: "4", lable: '编辑器' },
-    { id: "3", lable: '教程' },
+    { id: "3", lable: '示例' },
     { id: "2", lable: '文档' },
-    { id: "1", lable: '示例' }
+    { id: "1", lable: '教程' }
 ];
 
 const Menu: React.FC = () => {
 
-    const menuClick = (e: React.MouseEvent) => {
-        console.log("点击了菜单：", (e.target as any).innerHTML)
+    let navigate = useNavigate();
+
+    const dealEditor = ()=>{
+      
+        navigate('/editor');
     }
 
-    let navigate = useNavigate();
+    const menuClick = (e: React.MouseEvent) => {
+        let label = (e.target as any).innerHTML;
+        switch (label) {
+            case '教程':
+                navigate('/course')
+                break;
+            case '文档':
+                navigate('/document')
+                break
+            case '示例':
+                navigate('/example')
+                break;
+            case '编辑器':
+                dealEditor();
+                
+                break;
+            default:
+                break;
+        }
+    }
+
     const loginClick = () => {
-        console.log('点击了登录')
         navigate('/login')
     };
 
