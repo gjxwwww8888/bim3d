@@ -4,6 +4,7 @@ import { ReactLogo } from '@styled-icons/fa-brands/ReactLogo'
 import { Threedotjs } from '@styled-icons/simple-icons/Threedotjs'
 import { Typescript } from '@styled-icons/simple-icons/Typescript'
 import { Javascript } from '@styled-icons/fluentui-system-filled/Javascript'
+import {Gitee} from '@styled-icons/simple-icons/Gitee'
 import styled from 'styled-components'
 
 const IconGroupBox = styled.div`
@@ -41,10 +42,10 @@ const TypescriptIcon = styled(Typescript)`
   padding: 10px;
   background-color: rgb(51, 51, 51);
 `
-const JavascriptIcon = styled(Javascript)`
-  color: #fdfd07;
+const GiteeIcon = styled(Gitee)`
+  color: #f74141;
   margin: 0 5px;
-  padding: 4px;
+  padding: 10px;
   background-color: rgb(51, 51, 51);
 `
 
@@ -55,7 +56,7 @@ const IconGroup:React.FC = () => {
                 <ReactLogoIcon title='React icon' size='36'></ReactLogoIcon>
                 <ThreedotjsIcon title='Three.js icon' size='36'></ThreedotjsIcon>
                 <TypescriptIcon title='Typescript icon' size='36'></TypescriptIcon>
-                <JavascriptIcon title='Javascript icon' size='48'></JavascriptIcon>
+                <GiteeIcon title='Javascript icon' size='36'></GiteeIcon>
                 <GithubIcon title='Github icon' size='36'></GithubIcon>
             </IconGroupBox>
         </>
