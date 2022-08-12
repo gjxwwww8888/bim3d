@@ -16,7 +16,7 @@ const LogoBox = styled.div`
 `
 
 const BlueSketch = styled(Sketch)`
-  color: rgb(9, 109, 217);
+  color: rgb(242, 112, 19);
   margin: 0 5px;
 `
 

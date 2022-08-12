@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const Tips = styled.span`
-  color: rgb(12, 123, 241);
+  color: rgb(242, 112, 19);
 `
 
 const Introduce: React.FC = () => {

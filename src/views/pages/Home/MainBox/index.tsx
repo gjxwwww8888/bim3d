@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ButtonGroup from './ButtonGroup'
 import IconGroup from './IconGroup'
 import Introduce from './Introduce'
 
@@ -46,6 +47,7 @@ const MainBox: React.FC = () => {
         <Container>
           <IntroduceBox>
             <Introduce />
+            <ButtonGroup/>
             <IconGroup />
           </IntroduceBox>
           <Occupying>

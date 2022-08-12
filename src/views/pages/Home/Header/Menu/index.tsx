@@ -13,11 +13,47 @@ const MenuBox = styled.div`
 
 const MenuButton = styled.button`
     border: 0;
-    color: white;
-    margin: 0 20px;
     background: none;
+    text-transform: uppercase;
+    color: white;
+    /* font-weight: bold; */
+    position: relative;
+    outline: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+
     &:hover{
-        color: rgb(9, 109, 217);
+        color: rgb(242, 112, 19);
+    }
+    &::before, &::after{
+        box-sizing: inherit;
+        position: absolute;
+        content: '';
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;  
+    }
+    &::after{
+        bottom: 0;
+        right: 0;
+    }
+    &::before {
+        top: 0;
+        left: 0;
+    }
+    &:hover::before, &:hover::after {
+        width: 100%;
+        height: 100%;
+    }
+    &:hover::before{
+        border-top-color: rgb(242, 112, 19);
+        border-right-color: rgb(242, 112, 19);
+        transition: width 0.1s ease-out, height 0.1s ease-out 0.1s;
+    }
+    &:hover::after {
+        border-bottom-color: rgb(242, 112, 19);
+        border-left-color: rgb(242, 112, 19);
+        transition: border-color 0s ease-out 0.3s, width 0.1s ease-out 0.3s, height 0.1s ease-out 0.5s;
     }
 `;
 
@@ -28,9 +64,9 @@ const LoginBtn = styled.button`
     height: 32px;
     margin: 0 20px;
     border-radius: 6px;
-    background: rgb(9, 109, 217);
+    background: rgb(242, 112, 19);
     &:hover{
-        background: rgb(31, 137, 250);
+        background: rgb(248, 140, 64);
     }
 `;
 
