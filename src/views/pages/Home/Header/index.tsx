@@ -25,11 +25,12 @@ const Layout = styled.div`
 `
 
 const HeaderBox: React.FC = () => {
+    
     return (
         <>
             <Header>
                 <Layout>
-                    <Logo />
+                    <Logo primary={false}/>
                     <Menu />
                 </Layout>
             </Header>

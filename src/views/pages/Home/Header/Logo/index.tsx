@@ -2,17 +2,23 @@ import React from 'react'
 import { Sketch } from '@styled-icons/boxicons-logos/Sketch'
 import styled from 'styled-components'
 
-const LogoBox = styled.div`
+interface LogoClor {
+  primary:boolean;
+}
+
+const LogoBox = styled.div<LogoClor>`
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     height: 100%;
     width: 100%;
-    color: white;
+    color: ${props=>props.primary?'black':'white'};
     font-size: 1.2rem;
     line-height: 1.57;
     font-family: "Public Sans", sans-serif;
-    font-weight: 400;
+    font-weight: bold;
     text-align: left;
+    margin-left: 40px;
+    
 `
 
 const BlueSketch = styled(Sketch)`
@@ -20,10 +26,10 @@ const BlueSketch = styled(Sketch)`
   margin: 0 5px;
 `
 
-const Logo: React.FC = () => {
+const Logo = (props:any) => {
   return (
     <>
-      <LogoBox>
+      <LogoBox {...props}>
         <BlueSketch title='Sketch Icon' size='32' />
         <span>Bim3dEditor</span>
       </LogoBox>
