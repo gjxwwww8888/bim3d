@@ -1,4 +1,4 @@
-import BIM from "@/editor";
+import BIM from "@/editor/BIM";
 import MainScene from "../scene/MainScene";
 
 export default class SceneMgr implements IMgr{

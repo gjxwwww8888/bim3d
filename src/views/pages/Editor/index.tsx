@@ -1,4 +1,4 @@
-import BIM from '@/editor';
+import BIM from '@/editor/BIM';
 import React from 'react'
 
 

@@ -1,4 +1,4 @@
-import BIM from '@/editor';
+import BIM from '@/editor/BIM';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';

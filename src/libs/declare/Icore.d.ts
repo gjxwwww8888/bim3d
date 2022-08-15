@@ -24,6 +24,15 @@ interface IStartUp {
     startUp(): void;
 }
 
+interface IExit  extends IDispose{
+    /** 退出 */
+    exit():void;
+}
+
 interface IMgr extends IStartUp, IDispose{
+
+}
+
+interface IPlugin extends IStartUp, IExit {
 
 }

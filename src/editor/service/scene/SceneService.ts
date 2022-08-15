@@ -1,4 +1,4 @@
-import BIM from "@/editor";
+import BIM from "@/editor/BIM";
 import ServiceBase from "@/editor/base/server/ServiceBase";
 import { service } from "@/libs/const/enum";
 
