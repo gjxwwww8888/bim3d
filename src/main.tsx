@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import BIM from './editor/BIM';
 
-
 new BIM().startUp();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
