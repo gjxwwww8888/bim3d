@@ -1,5 +1,7 @@
 import BIM from '@/editor/BIM';
+import { toggleTheme } from '@/views/store/user';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -59,7 +61,7 @@ const MenuButton = styled.button`
 
 const LoginBtn = styled.button`
     border: 0;
-    color: white;
+    color: ${props=>props.theme.colors.body};
     width: 84px;
     height: 32px;
     margin: 0 20px;
@@ -71,11 +73,12 @@ const LoginBtn = styled.button`
 `;
 
 const menudata = [
-    { id: "5", lable: '登录' },
-    { id: "4", lable: '编辑器' },
-    { id: "3", lable: '示例' },
-    { id: "2", lable: '文档' },
-    { id: "1", lable: '教程' }
+    { id: "6", lable: '登录' },
+    { id: "5", lable: '编辑器' },
+    { id: "4", lable: '示例' },
+    { id: "3", lable: '文档' },
+    { id: "2", lable: '教程' },
+    { id: "1", lable: 'theme'}
 ];
 
 const Menu: React.FC = () => {
@@ -85,6 +88,11 @@ const Menu: React.FC = () => {
     const dealEditor = ()=>{
       
         navigate('/editor');
+    }
+
+    const dispatch = useDispatch();
+    function changeTheme(){
+        dispatch(toggleTheme())
     }
 
     const menuClick = (e: React.MouseEvent) => {
@@ -101,7 +109,9 @@ const Menu: React.FC = () => {
                 break;
             case '编辑器':
                 dealEditor();
-                
+                break;
+            case 'theme':
+                changeTheme();
                 break;
             default:
                 break;
