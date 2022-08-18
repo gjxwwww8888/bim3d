@@ -12,9 +12,9 @@ export default class MainScene implements IDispose {
     private readonly frustumSize: number = 10000;
 
     /** 平面宽度 */
-     readonly PLANE_WIDTH = 2000000;
+     readonly PLANE_WIDTH = 200000;
     /** 平面长度 */
-     readonly PLANE_HEIGTH = 2000000;
+     readonly PLANE_HEIGTH = 200000;
 
     readonly near: number = 100;
 
@@ -113,6 +113,7 @@ export default class MainScene implements IDispose {
         this.createControls();
 
         // this.addEvent();
+        // this.changeBackground(1)
     }
 
     dispose(): void {
@@ -196,14 +197,15 @@ export default class MainScene implements IDispose {
 
     private createScene(): void {
         this._scene = new Scene();
+        this._scene.background = new Color(ColorDef.COLOR_PIURITY_LIGHT)
     }
 
     /** 创建透视相机 */
     private createPCamera(): void {
         // 透视
         this._pcamera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, this.near, this.far);
-        this._pcamera.position.set(-10000, 10000, 10000);
-        this._pcamera.lookAt(new Vector3(0, 1500, 0));
+        this._pcamera.position.set(0, 5000, 10000);
+        this._pcamera.lookAt(new Vector3(0, 0, 0));
         this._camera = this._pcamera;
     }
 
@@ -213,8 +215,8 @@ export default class MainScene implements IDispose {
         let aspect = this._viewWidth / this._viewHeight;
         this._ocamera = new OrthographicCamera(this.frustumSize * aspect / - 2, this.frustumSize * aspect / 2,
             this.frustumSize / 2, this.frustumSize / - 2, 1, 100000);
-        this._ocamera.position.set(-10000, 10000, 10000);
-        this._ocamera.lookAt(new Vector3(0, 1500, 0));
+        this._ocamera.position.set(0, 500, 1000);
+        this._ocamera.lookAt(new Vector3(0, 0, 0));
         this._scene.add(this._ocamera);
     }
 
@@ -243,7 +245,7 @@ export default class MainScene implements IDispose {
 
     /** 辅助网格 */
     private createGrid(): void {
-        this._grid = new GridHelper(this.PLANE_WIDTH / 10, this.PLANE_WIDTH / 10000, 0xcccccc, 0xcccccc);
+        this._grid = new GridHelper(this.PLANE_WIDTH / 10, this.PLANE_WIDTH / 10000, 0xffffff, 0xffffff);
         (this._grid.material as LineBasicMaterial).opacity = 0.6;
         (this._grid.material as LineBasicMaterial).transparent = true;
         this._grid.position.set(0, -1, 0);
@@ -283,8 +285,8 @@ export default class MainScene implements IDispose {
 
     onResize(): void {
         // if (BIM.ctrlmode != CurMode.ORTHO) {
-        //     this._viewWidth = window.innerWidth;
-        //     this._viewHeight = window.innerHeight;
+            this._viewWidth = window.innerWidth;
+            this._viewHeight = window.innerHeight;
         // }
         if (this._trackCtrl) {
             this._trackCtrl.screen.width = this._viewWidth;
