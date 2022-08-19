@@ -10,11 +10,16 @@ const EditorDiv = styled.div`
     margin: 0;
     padding: 0;
     width: 100%;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 `
 
 class Editor extends React.Component {
 
     container = React.createRef<HTMLDivElement>();
+
+    editorview = React.createRef<HTMLDivElement>();
 
     componentDidMount(): void {
         console.log("editor mount")
@@ -22,6 +27,9 @@ class Editor extends React.Component {
         if (this.container) {
             BIM.container = this.container.current;
             BIM.SC.scene.mountedMainScene();
+        }
+        if(this.editorview){
+            BIM.uicontainer = this.editorview.current;
         }
     }
 
@@ -34,7 +42,7 @@ class Editor extends React.Component {
         return (
             <>
                 <div id='bim' ref={this.container} />
-                <EditorDiv>
+                <EditorDiv ref={this.editorview}>
                     <Container />
                 </EditorDiv>
 

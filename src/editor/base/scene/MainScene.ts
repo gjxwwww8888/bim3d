@@ -12,9 +12,9 @@ export default class MainScene implements IDispose {
     private readonly frustumSize: number = 10000;
 
     /** 平面宽度 */
-     readonly PLANE_WIDTH = 200000;
+    readonly PLANE_WIDTH = 200000;
     /** 平面长度 */
-     readonly PLANE_HEIGTH = 200000;
+    readonly PLANE_HEIGTH = 200000;
 
     readonly near: number = 100;
 
@@ -284,10 +284,10 @@ export default class MainScene implements IDispose {
     }
 
     onResize(): void {
-        // if (BIM.ctrlmode != CurMode.ORTHO) {
-            this._viewWidth = window.innerWidth;
-            this._viewHeight = window.innerHeight;
-        // }
+
+        this._viewWidth = window.innerWidth;
+        this._viewHeight = window.innerHeight;
+
         if (this._trackCtrl) {
             this._trackCtrl.screen.width = this._viewWidth;
             this._trackCtrl.screen.height = this._viewHeight;

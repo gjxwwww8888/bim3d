@@ -19,7 +19,7 @@ export default class SceneMgr implements IMgr{
     }
 
     onResize():void {
-
+        if(this._main)this._main.onResize();
     }
 
     mountedMainScene():void {

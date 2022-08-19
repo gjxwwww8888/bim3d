@@ -26,4 +26,7 @@ export default class SceneService extends ServiceBase implements ISceneSrevice {
         BIM.MGR.scene.mountedMainScene();
     }
    
+    mountedPanel(): void {
+        
+    }
 }

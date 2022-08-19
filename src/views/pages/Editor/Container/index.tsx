@@ -15,6 +15,7 @@ const Container = () => {
     return (
         <>
             <ContainerBox>
+                
                 <TopBar></TopBar>
                 <RightPanel></RightPanel>
             </ContainerBox>

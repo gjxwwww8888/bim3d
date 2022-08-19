@@ -9,6 +9,9 @@ export default class BIM {
     static mode: number;
 
     static container: any;
+
+    static uicontainer:any;
+    
     /** 管理 */
     static readonly MGR: Imgr = new Imgr();
     /** 全局服务容器 */

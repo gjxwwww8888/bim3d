@@ -8,6 +8,8 @@ interface ISchemeService {
 
 interface ISceneSrevice {
     mountedMainScene():void;
+
+    mountedPanel():void;
 }
 
 interface IMeshService {
