@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import LeftPanel from './LeftPanel'
 import RightPanel from './RightPanel'
 import TopBar from './TopBar'
 
@@ -15,9 +16,8 @@ const Container = () => {
     return (
         <>
             <ContainerBox>
-                
                 <TopBar></TopBar>
-                <RightPanel></RightPanel>
+                <LeftPanel></LeftPanel>
             </ContainerBox>
         </>
     )
