@@ -9,7 +9,8 @@ const EditorDiv = styled.div`
     top: 0;
     margin: 0;
     padding: 0;
-    width: 100%;
+    /* width: 100vh; */
+    /* height: 100vh; */
     &::-webkit-scrollbar{
         display: none;
     }
@@ -42,9 +43,9 @@ class Editor extends React.Component {
         return (
             <>
                 <div id='bim' ref={this.container} />
-                <EditorDiv ref={this.editorview}>
+                {/* <EditorDiv ref={this.editorview}> */}
                     <Container />
-                </EditorDiv>
+                {/* </EditorDiv> */}
 
             </>
         )

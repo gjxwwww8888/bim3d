@@ -1,24 +1,46 @@
-import React from 'react'
 import styled from 'styled-components'
 import LeftPanel from './LeftPanel'
 import RightPanel from './RightPanel'
 import TopBar from './TopBar'
 
-const ContainerBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
+const TopBox = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 48px;
+    cursor: pointer;
+`
+const LeftBox = styled.div`
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    width: 288px;
+    height: calc(100vh - 48px);
+    cursor: pointer;
+`
+
+const RightBox = styled.div`
+    position: absolute;
+    top: 48px;
+    right: 0px;
+    width: 240px;
+    height: calc(100vh - 48px);
+    cursor: pointer;
 `
 
 const Container = () => {
     return (
         <>
-            <ContainerBox>
+            <TopBox>
                 <TopBar></TopBar>
+            </TopBox>
+            <LeftBox>
                 <LeftPanel></LeftPanel>
-            </ContainerBox>
+            </LeftBox>
+            <RightBox>
+                <RightPanel></RightPanel>
+            </RightBox>
         </>
     )
 }

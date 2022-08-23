@@ -8,7 +8,7 @@ const TopBarBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   height: 48px;
   background-color: rgb(18,18,18);
 `
