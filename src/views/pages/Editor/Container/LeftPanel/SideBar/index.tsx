@@ -49,13 +49,18 @@ const leftMenu = [
 ];
 
 const SideBar = () => {
+
+    const itemClick = (data:any)=>{
+        console.log('dd');
+    }
+
     return (
         <>
             <SideBarBox>
                 {
                     leftMenu.map((data) => {
                         return (
-                            <LeftMenuItem key={data.id}>
+                            <LeftMenuItem key={data.id} onClick={(data)=>itemClick(data)}>
                                 {data.icon}
                                 {data.label}
                             </LeftMenuItem>
