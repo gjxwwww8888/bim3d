@@ -11,6 +11,7 @@ export default class SceneMgr implements IMgr{
     }
 
     startUp(): void {
+        console.log('scene mgr start up')    
         this._main = new MainScene();
     }
 

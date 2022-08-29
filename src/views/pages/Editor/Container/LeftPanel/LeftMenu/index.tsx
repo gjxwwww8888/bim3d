@@ -26,31 +26,34 @@ const Building2Icon = styled(Building2)`
 
 const BIMMenu = [
   { id: 'bim1', label: '画墙', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '弧墙', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '异形墙', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '横梁', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '楼板', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '异形楼板', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '方形柱', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '圆柱柱', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '异形柱', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '单跑楼梯', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '双跑楼梯', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '剪刀楼梯', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '墙洞', icon: <Building2Icon size='16' /> },
-  { id: 'bim1', label: '板洞', icon: <Building2Icon size='16' /> }
+  { id: 'bim2', label: '弧墙', icon: <Building2Icon size='16' /> },
+  { id: 'bim3', label: '异形墙', icon: <Building2Icon size='16' /> },
+  { id: 'bim4', label: '横梁', icon: <Building2Icon size='16' /> },
+  { id: 'bim5', label: '楼板', icon: <Building2Icon size='16' /> },
+  { id: 'bim6', label: '异形楼板', icon: <Building2Icon size='16' /> },
+  { id: 'bim7', label: '方形柱', icon: <Building2Icon size='16' /> },
+  { id: 'bim8', label: '圆柱柱', icon: <Building2Icon size='16' /> },
+  { id: 'bim9', label: '异形柱', icon: <Building2Icon size='16' /> },
+  { id: 'bim10', label: '单跑楼梯', icon: <Building2Icon size='16' /> },
+  { id: 'bim11', label: '双跑楼梯', icon: <Building2Icon size='16' /> },
+  { id: 'bim12', label: '剪刀楼梯', icon: <Building2Icon size='16' /> },
+  { id: 'bim13', label: '墙洞', icon: <Building2Icon size='16' /> },
+  { id: 'bim14', label: '板洞', icon: <Building2Icon size='16' /> }
 ]
 
 
 
 const LeftMenu = () => {
+
+
+
   return (
     <>
       <LeftMenuBox>
         <BIMMenuBox>
           {
             BIMMenu.map((data) => {
-              return <MenuItem key={data.id} icon={data.icon} label={data.label} ></MenuItem>
+              return <MenuItem key={data.id} icon={data.icon} label={data.label}></MenuItem>
             })
           }
         </BIMMenuBox>

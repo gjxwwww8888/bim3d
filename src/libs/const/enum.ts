@@ -25,3 +25,9 @@ export const enum ColorDef{
       /** 背景： 纯色（浅色）*/
       COLOR_PIURITY_LIGHT = 0xd2d3d6,
 }
+
+
+export const enum UIEvent {
+    /** 点击左侧菜单栏 */
+    LEFT_MENU_ITEM_CLICK = 'left-menu-item-click',
+}

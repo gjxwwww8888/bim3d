@@ -3,7 +3,7 @@ import BIM from "@/editor/BIM";
 export default class RenderMgr implements IMgr {
 
     startUp(): void {
-
+        console.log('render mgr start up')    
     }
 
     dispose(): void {

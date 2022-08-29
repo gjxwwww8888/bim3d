@@ -4,14 +4,17 @@ import { EventDispatcher } from "./framework/event/EventDispatcher";
 import { KeyBoardManager } from "./framework/event/KeyBoardManager";
 import Service from "./service";
 
+/**
+ * 3D 编辑器总控类
+ */
 export default class BIM {
 
+    /** 当前控制模式 */
     static mode: number;
-
+    /** 3D主容器 */
     static container: any;
-
+    /** UI主容器 */
     static uicontainer:any;
-    
     /** 管理 */
     static readonly MGR: Imgr = new Imgr();
     /** 全局服务容器 */

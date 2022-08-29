@@ -1,3 +1,5 @@
+import BIM from '@/editor/BIM'
+import { UIEvent } from '@/libs/const/enum'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -19,9 +21,16 @@ const MenuBox = styled.div`
 
 
 const MenuItem = (props:any) => {
+
+    const onMenuClick = (e:any)=>{
+        let menuLabel = e.target.innerText;
+        console.log('点击了'+menuLabel);
+        BIM.ED.event(UIEvent.LEFT_MENU_ITEM_CLICK, [menuLabel]);
+    }
+
     return (
         <>
-            <MenuBox>
+            <MenuBox onClick={(e)=>onMenuClick(e)}>
                 {props.icon}
                 {props.label}
             </MenuBox>
