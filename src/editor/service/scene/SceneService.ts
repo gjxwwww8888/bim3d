@@ -9,6 +9,8 @@ import { service } from "@/libs/const/enum";
 export default class SceneService extends ServiceBase implements ISceneSrevice {
     
 
+    
+
     constructor() {
         super(service.CAD_SERVICE);
         

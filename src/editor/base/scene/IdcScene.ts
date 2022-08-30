@@ -5,7 +5,7 @@
 export default class IdcScene implements IDispose{
 
 
-
+    
 
     dispose(): void {
         
