@@ -27,5 +27,10 @@ export default class EventMgr implements IMgr {
 
     private leftMenuClick(data:string):void {
         console.log('left menu click :', data);
+        switch(data){
+            case '画墙':
+                
+                break;
+        }
     }
 }

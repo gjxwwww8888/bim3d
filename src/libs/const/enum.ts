@@ -19,15 +19,24 @@ export const enum TCState {
 }
 
 
-export const enum ColorDef{
-      /** 背景： 纯色（深色）*/
-      COLOR_PIURITY_DEPTH = 0x242930,
-      /** 背景： 纯色（浅色）*/
-      COLOR_PIURITY_LIGHT = 0xd2d3d6,
+export const enum ColorDef {
+    /** 背景： 纯色（深色）*/
+    COLOR_PIURITY_DEPTH = 0x242930,
+    /** 背景： 纯色（浅色）*/
+    COLOR_PIURITY_LIGHT = 0xd2d3d6,
 }
 
 
 export const enum UIEvent {
     /** 点击左侧菜单栏 */
     LEFT_MENU_ITEM_CLICK = 'left-menu-item-click',
+}
+
+export const enum CurMode {
+    /** 默认：透视 */
+    SPECT,
+    /** 模型绘制 */
+    DRAW,
+    /** 测量模式 */
+    RULER,
 }

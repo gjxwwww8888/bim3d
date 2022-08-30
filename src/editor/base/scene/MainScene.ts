@@ -101,7 +101,7 @@ export default class MainScene implements IDispose {
 
         this.createScene();
         this.createPCamera();
-        // this.createOCamera();
+        this.createOCamera();
         this.createPlane();
         // this.createAxis();
         this.createGrid();
