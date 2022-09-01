@@ -3,7 +3,7 @@
 
 <h5 align="center">Author : songmy - work together Contact QQ : 1093697597.</h5>
 
-**Bim3d Editor** 使用流行的前端框架 React 和优秀的 webgl 库 Three.js 打造在线可编辑的 Cad 解析编辑器和自由的3D建模功能. 同时内置对智慧城市,数字孪生,智能家装,web游戏,工业展示等相关3D渲染项目的支持和案例.
+**_Bim3d Editor_** 使用全球最流行的前端框架 _React.js_ 和优秀的 _webgl/webgpu_ 库 _Three.js_ 打造在线可编辑的 _Cad_ 解析编辑器和自由的 _3D_ 建模功能. 同时内置了 _科技城市_, _数字孪生_ , _智能家装_ , _web游戏_ , _数字工业_, _星地计算_ 等相关3D渲染项目的支持案例.
 
 
 - [_Three.js_](https://threejs.org) 是一个跨浏览器JavaScript库和应用程序编程接口（API），用于使用WebGL在web浏览器中创建和显示动画三维计算机图形。
