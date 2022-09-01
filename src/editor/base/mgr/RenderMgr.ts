@@ -22,5 +22,11 @@ export default class RenderMgr implements IMgr {
 
         if (renderCss2d) renderCss2d.render(scene3d, perCamera);
 
+        if(scenemgr.example.render){
+            scenemgr.example.render.render(scenemgr.example.scene,scenemgr.example.camera );
+        }
+
+        scenemgr.update();
+
     }
 }

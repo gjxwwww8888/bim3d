@@ -11,8 +11,10 @@ export default class BIM {
 
     /** 当前控制模式 */
     static mode: number;
-    /** 3D主容器 */
+    /** 3D编辑器主容器 */
     static container: any;
+    /** 示例容器 */
+    static example:any;
     /** UI主容器 */
     static uicontainer:any;
     /** 管理 */
