@@ -1,6 +1,7 @@
 import BIM from "@/editor/BIM";
 import ExampleScne from "../scene/example";
-import MainScene from "../scene/MainScene";
+import MainScene from "../scene/main";
+
 
 export default class SceneMgr implements IMgr{
 

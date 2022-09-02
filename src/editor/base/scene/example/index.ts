@@ -1,4 +1,4 @@
-import { BoxGeometry, Color, DirectionalLight, DoubleSide, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
+import { BoxGeometry, DirectionalLight, DoubleSide, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
 
 export default class ExampleScne {
 

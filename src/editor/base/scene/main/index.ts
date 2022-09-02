@@ -1,7 +1,8 @@
 import { ColorDef } from "@/libs/const/enum";
 import { AmbientLight, Camera, Color, DirectionalLight, DoubleSide, GridHelper, HemisphereLight, LineBasicMaterial, Mesh, MeshBasicMaterial, OrthographicCamera, PerspectiveCamera, PlaneBufferGeometry, Scene, Sprite, SpriteMaterial, sRGBEncoding, TextureLoader, Vector3, WebGLRenderer } from "three";
 import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer";
-import TrackCameraCtrl from "../ctrl/TrackCameraCtrl";
+import TrackCameraCtrl from "../../ctrl/TrackCameraCtrl";
+
 
 /**
  * @description 3D鸟瞰场景
