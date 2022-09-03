@@ -97,8 +97,8 @@ export default class TrackCameraCtrl implements IDispose {
         // 阻尼系数；旋转时候的阻力
         this.dynamicDampingFactor = 20;
         // 表示相机距离物体的最小距离和最大距离
-        this.minDistance = 500;
-        this.maxDistance = 500000;
+        this.minDistance = 0;
+        this.maxDistance = 1000;
 
         this.mouseButtons = {
             LEFT: MOUSE.ROTATE,
@@ -106,7 +106,7 @@ export default class TrackCameraCtrl implements IDispose {
             RIGHT: MOUSE.PAN
         };
         // internals 这些私有变量用来追踪相机状态
-        this.target = new Vector3(0, 1500, 0);
+        this.target = new Vector3(0, 0, 0);
         this.EPS = 0.000001;
         // 相机上次的位置
         this.lastPosition = new Vector3();

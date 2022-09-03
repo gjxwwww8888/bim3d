@@ -1,5 +1,5 @@
 import BIM from "@/editor/BIM";
-import ExampleScne from "../scene/example";
+import ExampleScene from "../scene/example";
 import MainScene from "../scene/main";
 
 
@@ -8,7 +8,7 @@ export default class SceneMgr implements IMgr{
 
     private _main:MainScene;
 
-    private _example:ExampleScne;
+    private _example:ExampleScene;
 
     get main() {
         return this._main;
@@ -21,7 +21,7 @@ export default class SceneMgr implements IMgr{
     startUp(): void {
         console.log('scene mgr start up')    
         this._main = new MainScene();
-        this._example = new ExampleScne();
+        this._example = new ExampleScene();
     }
 
     dispose(): void {

@@ -1,6 +1,6 @@
 import { BoxGeometry, DirectionalLight, DoubleSide, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
 
-export default class ExampleScne {
+export default class ExampleScene {
 
     /** 场景 */
     private _scene: Scene;

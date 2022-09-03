@@ -21,7 +21,7 @@ export const enum TCState {
 
 export const enum ColorDef {
     /** 背景： 纯色（深色）*/
-    COLOR_PIURITY_DEPTH = 0x242930,
+    COLOR_PIURITY_DEPTH = 0x333333,
     /** 背景： 纯色（浅色）*/
     COLOR_PIURITY_LIGHT = 0xd2d3d6,
 }
