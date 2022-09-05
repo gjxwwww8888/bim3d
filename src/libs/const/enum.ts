@@ -35,8 +35,18 @@ export const enum UIEvent {
 export const enum CurMode {
     /** 默认：透视 */
     SPECT,
-    /** 模型绘制 */
+    /** 漫游模式 */
+    ROMA,
+    /** 模型绘制 2D正交*/
     DRAW,
     /** 测量模式 */
     RULER,
+    /** 移动模式 */
+    MOVE,
+    /** 旋转模式 */
+    ROTATE,
+    /** 缩放模式 */
+    SCALE,
+
+
 }
