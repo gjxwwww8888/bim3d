@@ -4,6 +4,8 @@ import { Building2 } from '@styled-icons/remix-line/Building2'
 import { ImageEdit } from '@styled-icons/fluentui-system-regular/ImageEdit'
 import { Molecule } from '@styled-icons/fluentui-system-regular/Molecule'
 import { TextParagraph } from '@styled-icons/fluentui-system-regular/TextParagraph'
+import { useDispatch } from 'react-redux'
+import { changeItem } from '@/views/store/editor'
 
 const SideBarBox = styled.div`
     width: 48px;
@@ -26,7 +28,7 @@ const LeftMenuItem = styled.div`
 
 const Building2Icon = styled(Building2)`
     color: white;
-
+    
 `
 const ImageEditIcon = styled(ImageEdit)`
     color: white;
@@ -50,9 +52,7 @@ const leftMenu = [
 
 const SideBar = () => {
 
-    const itemClick = (data:any)=>{
-        console.log('dd');
-    }
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -60,7 +60,7 @@ const SideBar = () => {
                 {
                     leftMenu.map((data) => {
                         return (
-                            <LeftMenuItem key={data.id} onClick={(data)=>itemClick(data)}>
+                            <LeftMenuItem key={data.id} onClick={()=>dispatch(changeItem(data.id))}>
                                 {data.icon}
                                 {data.label}
                             </LeftMenuItem>

@@ -1,7 +1,9 @@
 import MenuItem from '@/views/component/MenuItem'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Building2 } from '@styled-icons/remix-line/Building2'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/views/store'
 
 const LeftMenuBox = styled.div`
   width: 220px;
@@ -24,7 +26,7 @@ const Building2Icon = styled(Building2)`
 
 `
 
-const BIMMenu = [
+const structMenu = [
   { id: 'bim1', label: '画墙', icon: <Building2Icon size='16' /> },
   { id: 'bim2', label: '弧墙', icon: <Building2Icon size='16' /> },
   { id: 'bim3', label: '异形墙', icon: <Building2Icon size='16' /> },
@@ -41,21 +43,52 @@ const BIMMenu = [
   { id: 'bim14', label: '板洞', icon: <Building2Icon size='16' /> }
 ]
 
+const materialMenu = [
+  { id: 'bim1', label: '贴图', icon: <Building2Icon size='16' /> },
+  { id: 'bim2', label: '颜色', icon: <Building2Icon size='16' /> }
+]
+
+const moldMenu = [
+  { id: 'bim1', label: '物品', icon: <Building2Icon size='16' /> },
+  { id: 'bim2', label: '场景', icon: <Building2Icon size='16' /> },
+  { id: 'bim3', label: '人物', icon: <Building2Icon size='16' /> }
+]
+
+const drawMenu = [
+  { id: 'bim1', label: '图纸', icon: <Building2Icon size='16' /> },
+  { id: 'bim2', label: '清单', icon: <Building2Icon size='16' /> }
+]
+
 
 
 const LeftMenu = () => {
 
+  const menuidex = useSelector((state: RootState) => state.editor.idx);
 
+  let menuItem: any[];
+  if (menuidex === "sd2") {
+    menuItem = materialMenu;
+  }
+  else if (menuidex === "sd3") {
+    menuItem = moldMenu;
+  }
+  else if (menuidex === "sd4") {
+    menuItem = drawMenu;
+  }
+  else {
+    menuItem = structMenu;
+  }
 
   return (
     <>
       <LeftMenuBox>
         <BIMMenuBox>
           {
-            BIMMenu.map((data) => {
+            menuItem.map((data) => {
               return <MenuItem key={data.id} icon={data.icon} label={data.label}></MenuItem>
             })
           }
+
         </BIMMenuBox>
 
 
