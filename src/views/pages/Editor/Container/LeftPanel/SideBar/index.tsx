@@ -12,7 +12,9 @@ const SideBarBox = styled.div`
     height: 100%;
     background-color: rgb(18,18,18);
 `
-const LeftMenuItem = styled.div`
+const LeftMenuItem = styled.button`
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +23,13 @@ const LeftMenuItem = styled.div`
     height: 60px;
     color: white;
     font-size: 12px;
+    border: 0;
+    background-color:rgb(18,18,18);
     &:hover{
-        background-color:rgb(242, 112, 19);
+        background-color:rgb(54,54,54);
+    }
+    &:focus{
+        background-color:rgb(38,38,38);
     }
 `
 
@@ -60,7 +67,7 @@ const SideBar = () => {
                 {
                     leftMenu.map((data) => {
                         return (
-                            <LeftMenuItem key={data.id} onClick={()=>dispatch(changeItem(data.id))}>
+                            <LeftMenuItem key={data.id} onClick={() => { dispatch(changeItem(data.id)) }}>
                                 {data.icon}
                                 {data.label}
                             </LeftMenuItem>
