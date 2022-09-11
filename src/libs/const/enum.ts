@@ -24,6 +24,12 @@ export const enum ColorDef {
     COLOR_PIURITY_DEPTH = 0x333333,
     /** 背景： 纯色（浅色）*/
     COLOR_PIURITY_LIGHT = 0xd2d3d6,
+    /** 指示器：面颜色 */
+    IDC_PLANE_COLOR = 0xd5d8db,
+    /** 指示器：边颜色 */
+    IDC_LINE_COLOR = 0x545556,
+    /** 指示器：选中 */
+    IDC_SELECT_COLOR = 0x136ae8,
 }
 
 
