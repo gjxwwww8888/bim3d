@@ -17,6 +17,8 @@ export default class BIM {
     static example:any;
     /** UI主容器 */
     static uicontainer:any;
+    /** idc容器 */
+    static idc:any;
     /** 管理 */
     static readonly MGR: Imgr = new Imgr();
     /** 全局服务容器 */

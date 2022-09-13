@@ -1,5 +1,6 @@
 import BIM from "@/editor/BIM";
 import ExampleScene from "../scene/example";
+import IdcScene from "../scene/indicator";
 import MainScene from "../scene/main";
 
 
@@ -9,6 +10,8 @@ export default class SceneMgr implements IMgr{
     private _main:MainScene;
 
     private _example:ExampleScene;
+
+    private _idc:IdcScene;
 
     get main() {
         return this._main;
@@ -39,6 +42,11 @@ export default class SceneMgr implements IMgr{
 
     mountedExampleScene():void {
         BIM.example.appendChild(this._example.render.domElement);
+    }
+
+    mountedIdcScene():void {
+        BIM.idc.appendChild(this._idc.render.domElement);
+        this._idc.addEvent();
     }
 
     update():void {

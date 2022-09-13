@@ -1,3 +1,4 @@
+import BIM from "@/editor/BIM";
 import { ColorDef } from "@/libs/const/enum";
 import { AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, OrthographicCamera, RGBFormat, Scene, SphereGeometry, sRGBEncoding, TextureLoader, WebGLRenderer } from "three";
 import { Line2 } from "three/examples/jsm/lines/Line2";
@@ -19,6 +20,10 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
     private _viewHeight:number;
 
     private _viewWidth:number;
+
+    get render(): WebGLRenderer {
+        return this._glrender;
+    }
 
     constructor(){
         
@@ -147,6 +152,28 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
 
             this._scene.add(line);
         }
+    }
+
+    addEvent():void {
+        BIM.idc.addEventListener('pointermove',(e)=>this.onPointerMove(e));
+        BIM.idc.addEventListener('pointerout',(e)=>this.onPointerOut(e));
+        BIM.idc.addEventListener('pointerdown',(e)=>this.onPointerDown(e));
+    }
+
+    private onPointerMove(e:MouseEvent):void {
+
+    }
+
+    private onPointerOut(e:MouseEvent):void {
+        
+    }
+
+    private onPointerDown(e:MouseEvent):void {
+        
+    }
+
+    removeEvent():void {
+
     }
     
 
