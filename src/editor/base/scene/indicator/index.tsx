@@ -1,6 +1,8 @@
 import BIM from "@/editor/BIM";
+import LoadUtils from "@/editor/framework/utils/LoadUtils";
 import { ColorDef } from "@/libs/const/enum";
-import { AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, OrthographicCamera, RGBFormat, Scene, SphereGeometry, sRGBEncoding, TextureLoader, WebGLRenderer } from "three";
+import { BIMEvent } from "@/libs/const/event";
+import { AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, OrthographicCamera, Raycaster, RGBFormat, Scene, SphereGeometry, sRGBEncoding, TextureLoader, Vec2, Vector2, WebGLRenderer } from "three";
 import { Line2 } from "three/examples/jsm/lines/Line2";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
@@ -21,28 +23,46 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
 
     private _viewWidth:number;
 
+    private _pointer:Vector2;
+
+    private _raycaster: Raycaster;
+
+    private INTERSECTED: any;
+
+    private _faceIndex: number;
+
     get render(): WebGLRenderer {
         return this._glrender;
     }
 
+    get camera():OrthographicCamera {
+        return this._camera;
+    }
+
+    get scene():Scene {
+        return this._scene;
+    }
+
     constructor(){
         
-        this._viewHeight = 86;
-        this._viewWidth = 76;
+        this._viewHeight = 100;
+        this._viewWidth = 100;
 
-        // 场景
+        this._faceIndex = -1;
+        this._raycaster = new Raycaster();
+        // scene
         this._scene = new Scene();
         
-        // 正交相机
-        const frustumSize:number = 0.1;
+        // camera
+        const frustumSize:number = 10;
         const aspect = this._viewWidth/this._viewHeight;
         this._camera = new OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect /2, frustumSize/2, frustumSize/-2, 0.1, 1000);
 
-        // 光
+        // light
         let amblight = new AmbientLight(0x000000);
         this._scene.add(amblight);
 
-        // 指示器
+        // idc
         this.loadIdcImage();
 
         // render
@@ -66,31 +86,31 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
     private loadIdcImage() {
         const boxcolor = ColorDef.IDC_PLANE_COLOR;
 
-        let right = require('@/assets/image/idc/idc_right.jpg');
-        let left = require('@/assets/image/idc/idc_left.jpg');
-        let top = require('@/assets/image/idc/idc_top.jpg');
-        let bottom = require('@/assets/image/idc/idc_bottom.jpg');
-        let front = require('@/assets/image/idc/idc_front.jpg');
-        let back = require('@/assets/image/idc/idc_back.jpg');
+        // let right = LoadUtils.getImageUrl('idc/idc_right.jpg');
+        // let left =  LoadUtils.getImageUrl('idc/idc_left.jpg');
+        // let top =  LoadUtils.getImageUrl('idc/idc_top.jpg');
+        // let bottom =  LoadUtils.getImageUrl('idc/idc_bottom.jpg');
+        // let front =  LoadUtils.getImageUrl('idc/idc_front.jpg');
+        // let back =  LoadUtils.getImageUrl('idc/idc_back.jpg');
 
-        let texture = new TextureLoader();
-        let rightTexture = texture.load(right);
-        let leftTexture = texture.load(left);
-        let topTexture = texture.load(top);
-        let bottomTexture = texture.load(bottom);
-        let frontTexture = texture.load(front);
-        let backTexture = texture.load(back);
-        let rightMaterial = new MeshBasicMaterial({ color: boxcolor, map: rightTexture });
-        let leftMaterial = new MeshBasicMaterial({ color: boxcolor, map: leftTexture });
-        let topMaterial = new MeshBasicMaterial({ color: boxcolor, map: topTexture });
-        let bottomMaterial = new MeshBasicMaterial({ color: boxcolor, map: bottomTexture });
-        let frontMaterial = new MeshBasicMaterial({ color: boxcolor, map: frontTexture });
-        let backMaterial = new MeshBasicMaterial({ color: boxcolor, map: backTexture });
-        let materials = [rightMaterial, leftMaterial, topMaterial, bottomMaterial, frontMaterial, backMaterial];
+        // let texture = new TextureLoader();
+        // let rightTexture = texture.load(right);
+        // let leftTexture = texture.load(left);
+        // let topTexture = texture.load(top);
+        // let bottomTexture = texture.load(bottom);
+        // let frontTexture = texture.load(front);
+        // let backTexture = texture.load(back);
+        // let rightMaterial = new MeshBasicMaterial({ color: boxcolor, map: rightTexture });
+        // let leftMaterial = new MeshBasicMaterial({ color: boxcolor, map: leftTexture });
+        // let topMaterial = new MeshBasicMaterial({ color: boxcolor, map: topTexture });
+        // let bottomMaterial = new MeshBasicMaterial({ color: boxcolor, map: bottomTexture });
+        // let frontMaterial = new MeshBasicMaterial({ color: boxcolor, map: frontTexture });
+        // let backMaterial = new MeshBasicMaterial({ color: boxcolor, map: backTexture });
+        // let materials = [rightMaterial, leftMaterial, topMaterial, bottomMaterial, frontMaterial, backMaterial];
 
         const len:number = 5;
         let geometry = new BoxGeometry(len, len, len);
-        const box = new Mesh(geometry, materials);
+        const box = new Mesh(geometry, new MeshBasicMaterial({color:boxcolor}));
         box.position.set(0, 0, 0);
         this._scene.add(box);
 
@@ -160,24 +180,99 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
         BIM.idc.addEventListener('pointerdown',(e)=>this.onPointerDown(e));
     }
 
-    private onPointerMove(e:MouseEvent):void {
-
-    }
-
-    private onPointerOut(e:MouseEvent):void {
-        
-    }
-
-    private onPointerDown(e:MouseEvent):void {
-        
-    }
-
     removeEvent():void {
 
     }
     
-
     dispose(): void {
         
     }
+
+    private onPointerMove(e:MouseEvent):void {
+        if (!this._pointer) {
+            this._pointer = new Vector2();
+        }
+        this._pointer.x = (e.offsetX / this._viewWidth) * 2 - 1;
+        this._pointer.y = - (e.offsetY / this._viewHeight) * 2 + 1;
+    }
+
+    private onPointerOut(e:MouseEvent):void {
+        this.clearColor();
+        this._pointer = null;
+    }
+
+    private onPointerDown(e:MouseEvent):void {
+       
+        if (!this._pointer) {
+            this._pointer = new Vector2();
+        }
+        this._pointer.x = (e.offsetX / this._viewWidth) * 2 - 1;
+        this._pointer.y = - (e.offsetY / this._viewHeight) * 2 + 1;
+        this._raycaster.setFromCamera(this._pointer, this._camera);
+        const intersects = this._raycaster.intersectObjects(this._scene.children, true);
+        if (intersects.length > 0) {
+            let faceIndex: number = -1;
+            if ((intersects[0].object as Mesh).geometry instanceof SphereGeometry) {
+                faceIndex = Number((intersects[0].object as Mesh).name);
+            }
+            else if ((intersects[0].object as Mesh).geometry instanceof BoxGeometry) {
+                faceIndex = intersects[0].face.materialIndex;
+            }
+            else if ((intersects[0].object as Mesh) instanceof Line2) {
+                faceIndex = Number((intersects[0].object as Mesh).name);
+            }
+
+            if (faceIndex != -1) {
+                BIM.ED.event(BIMEvent.IDC_POINTER_DOWN, faceIndex);
+            }
+
+        }
+    }
+
+    changeFace(): void {
+        if (this._pointer && this._raycaster && this._camera) {
+            this.clearColor();
+            this._raycaster.setFromCamera(this._pointer, this._camera);
+            const intersects = this._raycaster.intersectObjects(this._scene.children, true);
+            if (intersects.length > 0) {
+                if ((intersects[0].object as Mesh) instanceof Line2) {
+                    this.INTERSECTED = intersects[0].object;
+                    this.INTERSECTED.material.color.set(ColorDef.IDC_SELECT_COLOR);
+                }
+                else if ((intersects[0].object as Mesh).geometry instanceof SphereGeometry) {
+                    this._faceIndex = -1;
+                    this.INTERSECTED = intersects[0].object;
+                    this.INTERSECTED.material.color.set(ColorDef.IDC_SELECT_COLOR);
+                }
+                else if (intersects[0].face.materialIndex != this._faceIndex) {
+                    this._faceIndex = intersects[0].face.materialIndex;
+                    this.INTERSECTED = intersects[0].object;
+                    if (this.INTERSECTED.material[this._faceIndex]) {
+                        this.INTERSECTED.material[this._faceIndex].color.set(ColorDef.IDC_SELECT_COLOR);
+                    }
+                }
+            }
+            else {
+
+                this.INTERSECTED = null;
+            }
+        }
+    }
+
+    private clearColor(): void {
+        if (this.INTERSECTED) {
+            if (this.INTERSECTED.geometry instanceof BoxGeometry && this._faceIndex != -1) {
+                if (this.INTERSECTED.material[this._faceIndex]) this.INTERSECTED.material[this._faceIndex].color.set(ColorDef.IDC_PLANE_COLOR);
+                this._faceIndex = -1;
+            }
+            else if (this.INTERSECTED.geometry instanceof SphereGeometry) {
+                this.INTERSECTED.material.color.set(ColorDef.IDC_LINE_COLOR);
+            }
+            else if (this.INTERSECTED instanceof Line2) {
+                this.INTERSECTED.material.color.set(ColorDef.IDC_LINE_COLOR);
+            }
+        }
+    }
+
+    
 }

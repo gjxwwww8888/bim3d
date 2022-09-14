@@ -12,6 +12,8 @@ interface ISceneSrevice {
     mountedPanel():void;
 
     mountedExampleScene():void;
+
+    mountedIdcScene():void;
 }
 
 interface IMeshService {

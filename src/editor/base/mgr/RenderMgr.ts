@@ -16,6 +16,14 @@ export default class RenderMgr implements IMgr {
         // 渲染编辑器
         if(scenemgr.main.render){
             scenemgr.main.render.render(scenemgr.main.scene,scenemgr.main.camera );
+            if(scenemgr.idc){
+                scenemgr.idc.changeFace();
+                scenemgr.idc.camera.position.copy(scenemgr.main.camera.position.clone().sub(scenemgr.main.controls.target));
+                scenemgr.idc.camera.updateProjectionMatrix();
+                scenemgr.idc.camera.lookAt(scenemgr.main.scene.position);
+
+                scenemgr.idc.render.render(scenemgr.idc.scene, scenemgr.idc.camera);
+            }
             
         }
         if(scenemgr.main.css2dRender){

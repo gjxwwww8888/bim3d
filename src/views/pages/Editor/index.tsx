@@ -1,20 +1,7 @@
 import BIM from '@/editor/BIM';
-import React from 'react'
-import styled from 'styled-components';
+import React from 'react';
 import Container from './Container';
 
-const EditorDiv = styled.div`
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    /* width: 100vh; */
-    /* height: 100vh; */
-    &::-webkit-scrollbar{
-        display: none;
-    }
-`
 
 class Editor extends React.Component {
 
@@ -29,7 +16,7 @@ class Editor extends React.Component {
             BIM.container = this.container.current;
             BIM.SC.scene.mountedMainScene();
         }
-        if(this.editorview){
+        if (this.editorview) {
             BIM.uicontainer = this.editorview.current;
         }
     }
@@ -43,10 +30,7 @@ class Editor extends React.Component {
         return (
             <>
                 <div id='bim' ref={this.container} />
-                {/* <EditorDiv ref={this.editorview}> */}
-                    <Container />
-                {/* </EditorDiv> */}
-
+                <Container />
             </>
         )
     }

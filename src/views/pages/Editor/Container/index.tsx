@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import React, { useEffect, useRef } from 'react'
 import LeftPanel from './LeftPanel'
 import RightPanel from './RightPanel'
 import TopBar from './TopBar'
+import BIM from '@/editor/BIM'
 
 const TopBox = styled.div`
     position: absolute;
@@ -29,7 +31,34 @@ const RightBox = styled.div`
     cursor: pointer;
 `
 
+const IdcBox = styled.div`
+    position: absolute;
+    top: 48px;
+    right: 240px;
+    width: 100px;
+    height: 100px;
+    /* background-color: yellow; */
+`
+
+
+
 const Container = () => {
+
+    const idc = useRef(null);
+
+    useEffect(()=>{
+    
+        // 挂载
+        if(idc){
+            BIM.idc = idc.current;
+            BIM.SC.scene.mountedIdcScene();
+        }
+        // 卸载
+        return ()=>{
+            console.log('idc unmount')
+        }
+    })
+
     return (
         <>
             <TopBox>
@@ -41,6 +70,9 @@ const Container = () => {
             <RightBox>
                 <RightPanel></RightPanel>
             </RightBox>
+            <IdcBox ref={idc}>
+
+            </IdcBox>
         </>
     )
 }
