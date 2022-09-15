@@ -56,3 +56,36 @@ export const enum CurMode {
 
 
 }
+
+/** 指示器 */
+export const enum IdcDef {
+    // 面   
+    RIGHT,
+    LEFT,
+    TOP,
+    BOTTOM,
+    FRONT,
+    BACK,
+    // 顶点
+    FRONT_RIGHT_TOP,
+    FRONT_RIGHT_BOTTOM,
+    FRONT_LEFT_TOP,
+    FRONT_LEFT_BOTTOM,
+    BACK_RIGHT_TOP,
+    BACK_RIGHT_BOTTOM,
+    BACK_LEFT_TOP,
+    BACK_LFET_BORROM,
+    // 边
+    EDGE_TOP_FRONE,
+    EDGE_TOP_RIGHT,
+    EDGE_TOP_BACK,
+    EDGE_TOP_LEFT,
+    EDGE_MF_LEFT,
+    EDGE_MF_RIGHT,
+    EDGE_MB_RIGHT,
+    EDGE_MB_LEFT,
+    EDGE_BOTTOM_FRONE,
+    EDGE_BOTTOM_RIGHT,
+    EDGE_BOTTOM_BACK,
+    EDGE_BOTTOM_LEFT
+}
