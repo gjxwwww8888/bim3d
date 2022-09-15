@@ -1,7 +1,7 @@
 <!-- markdownlint-disable-next-line -->
 <h1 align="center">Bim3d Editor</h1>
 
-<h5 align="center">Author : songmy - work together Contact QQ : 1093697597.</h5>
+<h5 align="center"> 作者 : songmy -- QQ群交流/开源贡献 : 603203658 </h5>
 
 **_Bim3d Editor_** 使用全球最流行的前端框架 _React.js_ 和优秀的 _webgl/webgpu_ 库 _Three.js_ 打造在线可编辑的 _Cad_ 解析编辑器和自由的 _3D_ 建模功能. 同时内置了 _科技城市_, _数字孪生_ , _智能家装_ , _web游戏_ , _数字工业_, _星地计算_ 等相关3D渲染项目的支持案例.
 
