@@ -57,7 +57,7 @@ const menuData = [
     {
         id: '2', label: '用户信息', icon: <UserIcon size='16' />, menus: [
             { key: 'user1', label: "个人主页" },
-            { key: 'user2', label: "网站主页" },
+            { key: 'user2', label: "后台管理" },
             { key: 'user3', label: "捐赠信息" },
             { key: 'user4', label: "退出登录" }
         ]
@@ -66,8 +66,8 @@ const menuData = [
 
 const User = () => {
 
-    const menuClick = (e: React.MouseEvent) => {
-        let label = (e.target as any).innerHTML;
+    const menuClick = (label: string) => {
+    
         console.log(label);
         switch (label) {
             case '设置':
@@ -76,9 +76,6 @@ const User = () => {
             case '帮助':
 
                 break
-            case '用户信息':
-
-                break;
             default:
                 break;
         }
@@ -90,7 +87,7 @@ const User = () => {
                 {
                     menuData.map((data) => {
                         return (
-                            <UserItem key={data.id} menuh={data.menus?.length * 40 + 'px'} onClick={(e) => menuClick(e)}>
+                            <UserItem key={data.id} menuh={data.menus?.length * 40 + 'px'} onClick={() => menuClick(data.label)}>
                                 {data.icon}
                                 {data.label}
                                 {data.menus && <ComboBox menus={data.menus} pleft={'-50px'}/>}

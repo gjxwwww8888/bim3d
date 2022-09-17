@@ -1,12 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
-const Container = styled.div<{pleft?:string}>`
+const Container = styled.div<{ pleft?: string }>`
     overflow: hidden;
     position: absolute;
     top: 48px;
     /* left: 0px; */
-    margin-left: ${props=>props.pleft};
+    margin-left: ${props => props.pleft};
     width: 140px;
     height: 0px;
     background-color: rgb(38, 38, 38);
@@ -40,6 +41,23 @@ const LabelItem = styled.span`
 
 /** 下拉菜单 */
 const ComboBox = (props: any) => {
+
+    let navigate = useNavigate();
+
+    const dealMiddleGround = () => {
+
+        navigate('/middle');
+    }
+
+    const subMenuClick = (label: string) => {
+        console.log('submenu:', label);
+        switch (label) {
+            case "后台管理":
+                dealMiddleGround();
+                break;
+        }
+    }
+
     return (
         <>
             <Container pleft={props.pleft}>
@@ -47,7 +65,7 @@ const ComboBox = (props: any) => {
                     {
                         props.menus.map((data) => {
                             return (
-                                <MenuItem key={data.key}>
+                                <MenuItem key={data.key} onClick={() => subMenuClick(data.label)}>
                                     <LabelItem>{data.label}</LabelItem>
                                 </MenuItem>
                             )
