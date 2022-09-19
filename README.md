@@ -69,7 +69,7 @@ Diamond Sponsors are those who have pledged \$100/month or more to Bim3dEditor.
 ### Gold 🏆
 
 
-Gold Sponsors are those who have pledged \$500/month or more to MUI.
+Gold Sponsors are those who have pledged \$500/month or more to Bim3dEditor.
 
 ### More backers
 
@@ -205,7 +205,7 @@ Diamond Sponsors are those who have pledged \$100/month or more to Bim3dEditor.
 ### Gold 🏆
 
 
-Gold Sponsors are those who have pledged \$500/month or more to MUI.
+Gold Sponsors are those who have pledged \$500/month or more to Bim3dEditor.
 
 ### More backers
 
