@@ -379,4 +379,40 @@ export default class MoldUtils {
 
         return count;
     }
+
+    /**
+     * 获取 夹角形状的坐标 \__
+     * @param fh 起始位置
+     * @param yh 右宽
+     * @param zh 左宽
+     * @param zyl 左长
+     * @param yyl 右长
+     * @param sinA 
+     * @param cosA 
+     * @param fu 
+     * @returns 
+     */
+    static getCornerPath(fh: number, yh: number, zh: number, zyl: number, yyl: number, sinA: number, cosA: number, fu: boolean = false) {
+        let path = fu ? [
+            new Vector2(fh / sinA + fh / sinA * cosA, -fh),
+            new Vector2(fh * sinA + zyl * cosA, -zyl * sinA + fh * cosA),
+
+            new Vector2(zh * sinA + zyl * cosA, -zyl * sinA + zh * cosA),
+            new Vector2(zh / sinA + yh / sinA * cosA, -yh),
+
+            new Vector2(yyl, -yh),
+            new Vector2(yyl, -fh)
+        ] : [
+            new Vector2(fh / sinA + fh / sinA * cosA, fh),
+            new Vector2(fh * sinA + zyl * cosA, zyl * sinA - fh * cosA),
+
+            new Vector2(zh * sinA + zyl * cosA, zyl * sinA - zh * cosA),
+            new Vector2(zh / sinA + yh / sinA * cosA, yh),
+
+            new Vector2(yyl, yh),
+            new Vector2(yyl, fh)
+        ]
+
+        return path;
+    }
 }
