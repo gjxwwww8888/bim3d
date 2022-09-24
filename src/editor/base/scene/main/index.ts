@@ -1,4 +1,4 @@
-import { BoxGeometry, Color, DirectionalLight, DoubleSide, GridHelper, HemisphereLight, LineBasicMaterial, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
+import { BoxGeometry, BufferAttribute, Color, DirectionalLight, DoubleSide, GridHelper, HemisphereLight, LineBasicMaterial, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
 import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer";
 import TrackCameraCtrl from "../../ctrl/TrackCameraCtrl";
 
@@ -67,11 +67,19 @@ export default class MainScene {
     private addBox(): void {
         let box = new BoxGeometry(1, 1, 1);
         let mat = new MeshPhongMaterial({
-            color: 0xff0000,
-            side: DoubleSide,
+            vertexColors: true
         })
+        const colors = (box.getAttribute('position').array as any).slice();
+        for (let i = 0, l = colors.length; i < l; i++) {
 
+            if (colors[i] > 0) colors[i] = 0.5;
+            else colors[i] = 0;
+
+        }
+
+        box.setAttribute('color', new BufferAttribute(colors, 3, false));
         this._box = new Mesh(box, mat);
+        this._box.position.set(0,0.5,0)
         this._scene.add(this._box);
     }
 
