@@ -1,4 +1,7 @@
 import BIM from "@/editor/BIM";
+import { Event } from "@/editor/framework/event/Event";
+import { Keyboard } from "@/editor/framework/event/Keyboard";
+import { KeyBoardManager } from "@/editor/framework/event/KeyBoardManager";
 import { UIEvent } from "@/libs/const/enum";
 
 /**
@@ -19,10 +22,12 @@ export default class EventMgr implements IMgr {
 
     private addEvent():void {
         BIM.ED.on(UIEvent.LEFT_MENU_ITEM_CLICK, this, this.leftMenuClick);
+        BIM.ED.on(Event.KEY_DOWN, this, this.onkeydown);
     }
 
     private removeEvent():void {
         BIM.ED.off(UIEvent.LEFT_MENU_ITEM_CLICK, this, this.leftMenuClick);
+        BIM.ED.off(Event.KEY_DOWN, this, this.onkeydown);
     }
 
     private leftMenuClick(data:string):void {
@@ -32,5 +37,19 @@ export default class EventMgr implements IMgr {
                 
                 break;
         }
+    }
+
+    private onkeydown(e: Event): void {
+        let isCtrl: boolean = KeyBoardManager.hasKeyDown(Keyboard.CONTROL);
+      
+        switch (e.keyCode) {
+            case Keyboard.ESCAPE:
+                this.dealEscapeEvent();
+                break;
+        }
+    }
+
+    private dealEscapeEvent(): void {
+    
     }
 }
