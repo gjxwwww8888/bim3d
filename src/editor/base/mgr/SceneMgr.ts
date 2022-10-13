@@ -19,6 +19,14 @@ export default class SceneMgr implements IMgr{
 
     private _center:Vector3;
 
+    get center():Vector3 {
+        return this._center;
+    }
+
+    set center(v:Vector3) {
+        this._center.set(v.x, v.y, v.z);
+    }
+
     get main() {
         return this._main;
     }
@@ -68,7 +76,7 @@ export default class SceneMgr implements IMgr{
         if(this._example)this._example.update();
     }
 
-    private onIdcPointerDwon(index:number, dis:number = 10):void {
+    onIdcPointerDwon(index:number, dis:number = 10):void {
         console.log("点击了面：", index);
         this._main.camera.up.set(0, 1, 0);
         let newC: Vector3 = new Vector3();

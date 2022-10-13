@@ -1,5 +1,5 @@
 interface ICadService {
-
+    testCad():void;
 }
 
 interface ISchemeService {
@@ -14,6 +14,8 @@ interface ISceneSrevice {
     mountedExampleScene():void;
 
     mountedIdcScene():void;
+
+    grideShow(visible:boolean):void;
 }
 
 interface IMeshService {

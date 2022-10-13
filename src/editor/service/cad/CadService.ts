@@ -23,5 +23,8 @@ export default class CadService extends ServiceBase implements ICadService {
         this.notifyServiceInited();
     }
 
+    testCad(): void {
+        this._ctrl.drawCad();
+    }
    
 }

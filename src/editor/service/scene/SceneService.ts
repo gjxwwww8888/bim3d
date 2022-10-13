@@ -12,7 +12,7 @@ export default class SceneService extends ServiceBase implements ISceneSrevice {
     
 
     constructor() {
-        super(service.CAD_SERVICE);
+        super(service.SCENE_SERVICE);
         
     }
 
@@ -38,5 +38,9 @@ export default class SceneService extends ServiceBase implements ISceneSrevice {
 
     mountedIdcScene(): void {
         BIM.MGR.scene.mountedIdcScene();
+    }
+
+    grideShow(visible: boolean): void {
+        BIM.MGR.scene.main.grideShow(visible);
     }
 }

@@ -109,8 +109,8 @@ const Menu = () => {
             case '场景':
 
                 break;
-            case '导入':
-
+            case '导入CAD':
+                BIM.SC.cad.testCad();
                 break
             case '导出':
                 addPopPanel();

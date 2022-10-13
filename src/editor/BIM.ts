@@ -3,7 +3,7 @@ import ServiceContainer from "./base/server/ServiceContainer";
 import { EventDispatcher } from "./framework/event/EventDispatcher";
 import { KeyBoardManager } from "./framework/event/KeyBoardManager";
 import Service from "./service";
-
+import fontjson from '../assets/json/song_regular.json'
 /**
  * 3D 编辑器总控类
  */
@@ -24,7 +24,9 @@ export default class BIM {
     /** 全局服务容器 */
     static readonly SC: ServiceContainer = new ServiceContainer();
     /** 全局事件派发 */
-    static readonly ED: EventDispatcher = new EventDispatcher();;
+    static readonly ED: EventDispatcher = new EventDispatcher();
+
+    static fontJson:any = fontjson;
 
     startUp(): void {
         console.log('BIM start up.')

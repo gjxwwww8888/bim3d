@@ -58,6 +58,10 @@ export default class MainScene {
         this.createControls();
     }
 
+    grideShow(visible: boolean): void{
+        this._grid.visible = visible;
+    }
+
     private createScene(): void {
         this._scene = new Scene();
         this._scene.background = new Color(0x333333)
