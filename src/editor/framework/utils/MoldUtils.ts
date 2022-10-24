@@ -415,4 +415,84 @@ export default class MoldUtils {
 
         return path;
     }
+
+    static getFaceVI(topvec: Vector3[], bottomvec: Vector3[], count: number, istop:boolean = false):any[] {
+
+        let vertex: number[] = [];
+        let index: number[] = [];
+        let face: Vector3[] = [];
+        let faceVec: any[] = [];
+
+        for (let i = 0; i < bottomvec.length-1; i++) {
+
+            vertex.push(bottomvec[i].x, bottomvec[i].y, bottomvec[i].z);
+            vertex.push(bottomvec[i + 1].x, bottomvec[i + 1].y, bottomvec[i + 1].z);
+
+            vertex.push(topvec[i].x, topvec[i].y, topvec[i].z);
+            vertex.push(topvec[i + 1].x, topvec[i + 1].y, topvec[i + 1].z);
+
+            if(istop){
+                index.push(count + i, count + i + 2, count + i + 1);
+                index.push(count + i + 2, count + i + 3, count + i + 1);
+            }
+            else {
+                index.push(count + i, count + i + 1, count + i + 2);
+                index.push(count + i + 2, count + i + 1, count + i + 3);
+            }
+           
+            // 面
+            face = [];
+            face.push(bottomvec[i], bottomvec[i + 1], topvec[i + 1], topvec[i]);
+            faceVec.push(face);
+
+            count += 3;
+        }
+
+        count += bottomvec.length - 1;
+
+
+        return [vertex, index, faceVec, count];
+    }
+
+    static getPlaneVI(topvec: Vector3[], bottomvec: Vector3[], count: number): any[] {
+
+        let vertex: number[] = [];
+        let index: number[] = [];
+        let face: Vector3[] = [];
+        let faceVec: any[] = [];
+        // 顶面
+        for (let i = 0; i < topvec.length; i++) {
+            vertex.push(topvec[i].x, topvec[i].y, topvec[i].z);
+            if (i > 0) {
+                face.push(topvec[i]);
+            }
+        }
+        faceVec.push(face);
+
+        for (let i = 1; i < topvec.length - 1; i++) {
+            index.push(count, count + i, count + i + 1);
+        }
+        index.push(count, count + topvec.length - 1, count + 1);
+        count += topvec.length;
+
+        // 底面
+        face = [];
+        for (let i = 0; i < bottomvec.length; i++) {
+            vertex.push(bottomvec[i].x, bottomvec[i].y, bottomvec[i].z);
+            if (i > 0) {
+                face.push(bottomvec[i]);
+            }
+        }
+        faceVec.push(face);
+
+        for (let i = 1; i < bottomvec.length - 1; i++) {
+            index.push(count, count + i, count + i + 1);
+        }
+
+        index.push(count, count + bottomvec.length - 1, count + 1);
+        count += bottomvec.length;
+
+        return [vertex, index, faceVec, count];
+    }
+
 }
