@@ -6,7 +6,7 @@ import TopBar from './TopBar'
 import BIM from '@/editor/BIM'
 
 const TopBox = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -14,7 +14,7 @@ const TopBox = styled.div`
     cursor: pointer;
 `
 const LeftBox = styled.div`
-    position: absolute;
+    position: fixed;
     top: 48px;
     left: 0px;
     width: 288px;
@@ -23,7 +23,7 @@ const LeftBox = styled.div`
 `
 
 const RightBox = styled.div`
-    position: absolute;
+    position: fixed;
     top: 48px;
     right: 0px;
     width: 240px;
@@ -32,7 +32,7 @@ const RightBox = styled.div`
 `
 
 const IdcBox = styled.div`
-    position: absolute;
+    position: fixed;
     top: 48px;
     right: 240px;
     width: 100px;
