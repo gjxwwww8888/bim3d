@@ -75,10 +75,11 @@ const LoginBtn = styled.button`
 const menudata = [
     { id: "6", lable: '登录' },
     { id: "5", lable: '编辑器' },
-    { id: "4", lable: '示例' },
-    { id: "3", lable: '文档' },
-    { id: "2", lable: '教程' },
-    { id: "1", lable: 'theme'}
+    { id: "4", lable: '智慧工厂' },
+    { id: "3", lable: '游戏' },
+    { id: "2", lable: '智能家装' },
+    { id: "1", lable: '数字孪生'},
+    { id: "0", lable: '科技城市'}
 ];
 
 const Menu: React.FC = () => {
@@ -98,13 +99,13 @@ const Menu: React.FC = () => {
     const menuClick = (e: React.MouseEvent) => {
         let label = (e.target as any).innerHTML;
         switch (label) {
-            case '教程':
+            case '科技城市':
                 navigate('/course')
                 break;
-            case '文档':
+            case '数字孪生':
                 navigate('/document')
                 break
-            case '示例':
+            case '智能家装':
                 navigate('/example')
                 break;
             case '编辑器':
@@ -127,7 +128,7 @@ const Menu: React.FC = () => {
             <MenuBox>
                 {
                     menudata.map(data => {
-                        if (parseInt(data.id) === menudata.length) {
+                        if (parseInt(data.id) === menudata.length-1) {
                             return <LoginBtn key={data.id} onClick={loginClick}>登 录</LoginBtn>
                         }
                         else {
