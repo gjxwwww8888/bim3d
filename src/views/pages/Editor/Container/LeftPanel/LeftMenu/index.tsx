@@ -1,4 +1,4 @@
-import MenuItem from '@/views/component/MenuItem'
+import MenuItem from '@/views/components/MenuItem'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Building2 } from '@styled-icons/remix-line/Building2'

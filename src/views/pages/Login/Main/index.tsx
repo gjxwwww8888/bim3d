@@ -1,4 +1,4 @@
-import TextLine from '@/views/component/TextLine'
+import TextLine from '@/views/components/TextLine'
 import React from 'react'
 import styled from 'styled-components'
 import { LogoWechat } from '@styled-icons/ionicons-solid/LogoWechat'

@@ -1,6 +1,6 @@
 import BIM from '@/editor/BIM'
-import ComboBox from '@/views/component/ComboBox'
-import PopPanel from '@/views/component/PopPanel'
+import ComboBox from '@/views/components/ComboBox'
+import PopPanel from '@/views/components/PopPanel'
 import { Export } from '@styled-icons/boxicons-regular/Export'
 import { Import } from '@styled-icons/boxicons-regular/Import'
 import { New } from '@styled-icons/fluentui-system-regular/New'
@@ -130,7 +130,7 @@ const Menu = () => {
         <>
             <MenuBox>
                 {
-                    menuData.map((data) => {
+                    menuData.map((data:any) => {
                         return (
                             <MenuItem key={data.id} menuh={data.menus?.length * 40 + 'px'} onClick={(e) => menuClick(e)}>
                                 {data.icon}

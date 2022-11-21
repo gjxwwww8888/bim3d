@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Settings } from '@styled-icons/feather/Settings'
 import { Help } from '@styled-icons/ionicons-outline/Help'
 import { Users } from '@styled-icons/feather/Users'
-import ComboBox from '@/views/component/ComboBox'
+import ComboBox from '@/views/components/ComboBox'
 
 const UserBox = styled.div`
     display: flex;
