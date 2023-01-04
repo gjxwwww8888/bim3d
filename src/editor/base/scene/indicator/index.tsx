@@ -129,7 +129,7 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
         let count: number = 8;
         for (let i = 0; i < count; i++) {
             const geometry = new SphereGeometry(0.5);
-            const material = new MeshBasicMaterial({ color: ColorDef.IDC_LINE_COLOR, format:RGBFormat });
+            const material = new MeshBasicMaterial({ color: ColorDef.IDC_LINE_COLOR });
             const sphere = new Mesh(geometry, material);
             sphere.position.set(pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]);
             let idx = i + 6;
