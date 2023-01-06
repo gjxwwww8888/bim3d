@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Menu from './Menu'
+import Search from './Search'
 
 const Header = styled.div`
+    overflow: hidden;
     display: flex;
     position: fixed;
     top: 0px;
@@ -12,16 +14,17 @@ const Header = styled.div`
     width: 100%;
     height: 64px;
     color: red;
-    background: rgb(18,18,18);
+    background-color: rgb(18,18,18);
     z-index: 5;
 `
 
 const Layout = styled.div`
     display: flex;
-    /* background: yellow; */
+
     height: 32px;
-    width: 80%;
+    width: 70%;
     flex-direction: row;
+
 `
 
 const HeaderBox: React.FC = () => {
@@ -32,6 +35,8 @@ const HeaderBox: React.FC = () => {
                 <Layout>
                     <Logo primary={false}/>
                     <Menu />
+                    <Search></Search>
+                    
                 </Layout>
             </Header>
         </>

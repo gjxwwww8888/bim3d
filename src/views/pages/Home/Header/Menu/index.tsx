@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const MenuBox = styled.div`
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -19,6 +19,7 @@ const MenuButton = styled.button`
     text-transform: uppercase;
     color: white;
     /* font-weight: bold; */
+    font-size: 14px;
     position: relative;
     outline: none;
     padding: 10px 20px;
@@ -27,7 +28,7 @@ const MenuButton = styled.button`
     &:hover{
         color: rgb(242, 112, 19);
     }
-    &::before, &::after{
+    /* &::before, &::after{
         box-sizing: inherit;
         position: absolute;
         content: '';
@@ -56,30 +57,19 @@ const MenuButton = styled.button`
         border-bottom-color: rgb(242, 112, 19);
         border-left-color: rgb(242, 112, 19);
         transition: border-color 0s ease-out 0.3s, width 0.1s ease-out 0.3s, height 0.1s ease-out 0.5s;
-    }
+    } */
 `;
 
-const LoginBtn = styled.button`
-    border: 0;
-    color: ${props=>props.theme.colors.body};
-    width: 84px;
-    height: 32px;
-    margin: 0 20px;
-    border-radius: 6px;
-    background: rgb(242, 112, 19);
-    &:hover{
-        background: rgb(248, 140, 64);
-    }
-`;
+
 
 const menudata = [
-    { id: "6", lable: '登录' },
-    { id: "5", lable: '编辑器' },
-    { id: "4", lable: '智慧工厂' },
-    { id: "3", lable: '游戏' },
-    { id: "2", lable: '智能家装' },
-    { id: "1", lable: '数字孪生'},
-    { id: "0", lable: '科技城市'}
+    
+    { id: "0", lable: '文档' },
+    { id: "1", lable: 'API' },
+    { id: "2", lable: '3D可视化' },
+    { id: "3", lable: '解决方案' },
+    { id: "4", lable: '赞助' },
+    { id: "5", lable: '合作伙伴' }
 ];
 
 const Menu: React.FC = () => {
@@ -119,21 +109,19 @@ const Menu: React.FC = () => {
         }
     }
 
-    const loginClick = () => {
-        navigate('/login')
-    };
+   
 
     return (
         <>
             <MenuBox>
                 {
                     menudata.map(data => {
-                        if (parseInt(data.id) === menudata.length-1) {
-                            return <LoginBtn key={data.id} onClick={loginClick}>登 录</LoginBtn>
-                        }
-                        else {
+                        // if (parseInt(data.id) === 0) {
+                        //     return <LoginBtn key={data.id} onClick={loginClick}>登 录</LoginBtn>
+                        // }
+                        // else {
                             return <MenuButton key={data.id} onClick={(e) => menuClick(e)}>{data.lable}</MenuButton>
-                        }
+                        // }
                     })
                 }
             </MenuBox>
