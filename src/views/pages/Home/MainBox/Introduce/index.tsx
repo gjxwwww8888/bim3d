@@ -8,6 +8,7 @@ const TP = styled.span`
 
   background-image: linear-gradient(to right, #f80707, #ff9a02);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
     
 `
