@@ -7,29 +7,27 @@ const ButtonBox = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 10px 0 20px 0;
+    padding: 30px 0;
 `
 
 const BorderButton = styled.button`
-    width: 140px;
-    height: 32px;
-    background: transparent;
-    color: rgb(242, 112, 19);
-    background: none;
-    border: 1px solid rgb(242, 112, 19);
-    border-radius: 5px 5px;
-    font-size: 16px;
-    margin: 0 20px;
 
+    border: 1px solid rgb(242, 112, 19);
+    color: rgb(242, 112, 19);
+    width: 140px;
+    height: 42px;
+    margin: 0 20px;
+    border-radius: 6px;
+    background: white;
     &:hover{
-        color: rgb(179, 78, 6);
-        border: 1px solid rgb(179, 78, 6);
+        color: white;
+        background: rgb(248, 140, 64);
     }
 `
 
 const NormalButton = styled.button`
     width: 140px;
-    height: 32px;
+    height: 42px;
     color: white;
     background: rgb(242, 112, 19);
     font-size: 16px;
@@ -38,13 +36,15 @@ const NormalButton = styled.button`
     border: 0;
     border-radius: 5px 5px;
     &:hover{
-        background: rgb(179, 78, 6);
+       
+        background: red;
     }
 `
 const ViewInArIcon = styled(ViewInAr)`
-    color: white;
+    color: #ccc;
     margin-right: 10px;
     padding-bottom: 2px;
+   
 `
 
 const ButtonGroup: React.FC = () => {

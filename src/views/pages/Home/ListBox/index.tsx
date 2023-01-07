@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import ItemBox from './ItemBox'
+import ListInfo from './ListInfo'
 
 const List = styled.div`
 
     position: relative;
-    min-height: 200vh;
+    min-height: 100vh;
+    background-color: #eee;
     z-index: 1;
 
 `
@@ -12,7 +15,10 @@ const List = styled.div`
 const ListBox: React.FC  = () => {
   return (
     <>
-        <List></List>
+        <List>
+          <ListInfo></ListInfo>
+          <ItemBox></ItemBox>
+        </List>
     </>
   )
 }

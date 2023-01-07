@@ -17,9 +17,10 @@ const SerchInput = styled.input.attrs(props => ({
 }))`
     margin: 0;
     width: 100px;
-    height: 14px;
-    padding: 6px;
+    height: 24px;
+    padding: 0px;
     font-size: 14px;
+    background-color: #ddd;
     border-radius: 5px;
     border: none;
     &:focus {
@@ -35,7 +36,7 @@ const LoginBtn = styled.button`
     height: 36px;
     margin: 0 20px;
     border-radius: 6px;
-    background: rgb(18,18,18);
+    background: white;
     &:hover{
         color: white;
         background: rgb(248, 140, 64);

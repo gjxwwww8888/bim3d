@@ -17,8 +17,8 @@ const MenuButton = styled.button`
     border: 0;
     background: none;
     text-transform: uppercase;
-    color: white;
-    /* font-weight: bold; */
+    color: rgb(38,38,38);
+    font-weight: 500;
     font-size: 14px;
     position: relative;
     outline: none;
@@ -66,10 +66,9 @@ const menudata = [
     
     { id: "0", lable: '文档' },
     { id: "1", lable: 'API' },
-    { id: "2", lable: '3D可视化' },
-    { id: "3", lable: '解决方案' },
-    { id: "4", lable: '赞助' },
-    { id: "5", lable: '合作伙伴' }
+    { id: "2", lable: '示例' },
+    { id: "3", lable: '赞助' },
+    { id: "4", lable: '合作开发' }
 ];
 
 const Menu: React.FC = () => {

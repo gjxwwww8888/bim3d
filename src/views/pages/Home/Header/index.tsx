@@ -14,8 +14,9 @@ const Header = styled.div`
     width: 100%;
     height: 64px;
     color: red;
-    background-color: rgb(18,18,18);
+    background-color: white;
     z-index: 5;
+    border-bottom:1px solid #e0e0e0;
 `
 
 const Layout = styled.div`

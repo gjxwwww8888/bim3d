@@ -8,6 +8,7 @@ import {Gitee} from '@styled-icons/simple-icons/Gitee'
 import styled from 'styled-components'
 
 const IconGroupBox = styled.div`
+    margin-top: 20px;
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -16,48 +17,53 @@ const IconGroupBox = styled.div`
 `
 
 const GithubIcon = styled(Github)`
-  color: white;
-  margin: 0 5px;
+  color: #3a3a3a;
+  margin: 0 10px;
   padding: 10px;
-  background-color: rgb(51, 51, 51);
+  background-color:#ccc;
+  border-radius: 50%;
 `
 
 const ReactLogoIcon = styled(ReactLogo)`
-  color: #38d2f8;
-  margin: 0 5px;
+  color: #3a3a3a;
+  margin: 0 10px;
   padding: 10px;
-  background-color: rgb(51, 51, 51);
+  background-color: #ccc;
+  border-radius: 50%;
 `
 
 const ThreedotjsIcon = styled(Threedotjs)`
-  color: white;
-  margin: 0 5px;
+  color: #3a3a3a;
+  margin: 0 10px;
   padding: 10px;
-  background-color: rgb(51, 51, 51);
+  background-color: #ccc;
+  border-radius: 50%;
 `
 
 const TypescriptIcon = styled(Typescript)`
-  color: #067ceb;
-  margin: 0 5px;
+  color: #3a3a3a;
+  margin: 0 10px;
   padding: 10px;
-  background-color: rgb(51, 51, 51);
+  background-color: #ccc;
+  border-radius: 50%;
 `
 const GiteeIcon = styled(Gitee)`
-  color: #f74141;
-  margin: 0 5px;
+  color: #3a3a3a;
+  margin: 0 10px;
   padding: 10px;
-  background-color: rgb(51, 51, 51);
+  background-color: #ccc;
+  border-radius: 50%;
 `
 
 const IconGroup:React.FC = () => {
     return (
         <>
             <IconGroupBox>
-                <ReactLogoIcon title='React icon' size='36'></ReactLogoIcon>
-                <ThreedotjsIcon title='Three.js icon' size='36'></ThreedotjsIcon>
-                <TypescriptIcon title='Typescript icon' size='36'></TypescriptIcon>
-                <GiteeIcon title='Javascript icon' size='36'></GiteeIcon>
-                <GithubIcon title='Github icon' size='36'></GithubIcon>
+                <ReactLogoIcon title='React icon' size='50'></ReactLogoIcon>
+                <ThreedotjsIcon title='Three.js icon' size='50'></ThreedotjsIcon>
+                <TypescriptIcon title='Typescript icon' size='50'></TypescriptIcon>
+                <GiteeIcon title='Javascript icon' size='50'></GiteeIcon>
+                <GithubIcon title='Github icon' size='50'></GithubIcon>
             </IconGroupBox>
         </>
     )
