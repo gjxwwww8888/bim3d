@@ -1,3 +1,4 @@
+import bgimg from '@/assets/image/bg/bg.jpg'
 import { Building } from '@styled-icons/bootstrap/Building'
 import { Flower2 } from '@styled-icons/bootstrap/Flower2'
 import { Navigation } from '@styled-icons/boxicons-regular/Navigation'
@@ -9,8 +10,7 @@ import { ProjectionScreen } from '@styled-icons/fluentui-system-regular/Projecti
 import { LocationCity } from '@styled-icons/material/LocationCity'
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import BIMItem from './BIMItem'
-import HomeDesign from './HomeDesign'
+import ItemShow from './ItemShow'
 
 const TabBox = styled.div`
   display: flex;
@@ -56,8 +56,7 @@ const MenuItem = styled.div`
     cursor: pointer;
     &:hover{
         color: rgb(242, 112, 19);
-    }
-   
+    }   
 `
 
 const BIMIcon = styled(Building)`
@@ -117,21 +116,31 @@ const MenuData = [
   { id: '8', label: 'AI导航', icon: <NavigateIcon size='32' /> }
 ]
 
-const ShowItem = (props)=>{
-    const index = props.index;
-    if(index === 0){
-      return <BIMItem/>
-    }
-    else if(index === 1){
-      return <HomeDesign/>
-    }
+const infoData = [
+  { title: 'BIM建模 结构一览无余', text: '在线cad解析，可承载数十万个建筑结构，每个墙面，每个柱子都能流畅清晰的展现', imgurl: bgimg },
+  { title: '智能家装 设计出图快人一步', text: '开源免费的家装设计解决方案，设计出图一键搞定。', imgurl: bgimg },
+  { title: '数字大屏 展示演讲一步到位', text: '提供大屏适配方案，给你无限可能', imgurl: bgimg },
+  { title: '智慧城市 规划设计尽在掌握', text: '展示街道和城市规划，可查看全国城市数据', imgurl: bgimg },
+  { title: '助力物联 万物互通 ', text: '物联网下一个时代的风口', imgurl: bgimg },
+  { title: '工厂生产 实时数据展示，监控生产每个细节', text: '对接工厂数据，实时展示生产细节', imgurl: bgimg },
+  { title: '数字农业 实时展示自动化培育生产环节', text: '自动化，机械化，智能温控，未来农业科技的典范', imgurl: bgimg },
+  { title: '畅游游戏世界 体验虚拟人生', text: '不止页游 跨平台才是游戏的未来！', imgurl: bgimg },
+  { title: 'AI 导航 实时的地图路线规划', text: '提供地图导航的前端解决方案。', imgurl: bgimg }
+]
+
+const ShowItem = (props) => {
+  const index = props.index;
+  return <ItemShow
+    label={MenuData[index].id}
+    title={infoData[index].title}
+    text={infoData[index].text}
+    imgurl={infoData[index].imgurl}
+  />
 }
 
 const ItemBox = () => {
 
   let linkbar = React.createRef<HTMLDivElement>();
-
-  // let navigate = useNavigate();
 
   const [index, setIndex] = useState(0);
 
@@ -143,40 +152,11 @@ const ItemBox = () => {
       linkbar.current.style.left = (e.target as any).offsetLeft + 'px';
     }
 
-    switch (label) {
-      case 'BIM建模':
-        // navigate('/course')
-        setIndex(0)
+    for (let idx = 0; idx < MenuData.length; idx++) {
+      if (MenuData[idx].label === label) {
+        setIndex(parseInt(MenuData[idx].id));
         break;
-      case '智能家装':
-        // navigate('/document')
-        setIndex(1)
-        break
-      case '数字大屏':
-        // navigate('/example')
-        setIndex(2)
-        break;
-      case '智慧城市':
-        // navigate('/example')
-        setIndex(3)
-        break;
-      case '物联网':
-        // navigate('/example')
-        break;
-      case '工业科技':
-        // navigate('/example')
-        break;
-      case '农业自动化':
-        // navigate('/example')
-        break;
-      case 'web游戏':
-        // navigate('/example')
-        break;
-      case 'AI导航':
-        // navigate('/example')
-        break;
-      default:
-        break;
+      }
     }
   }
 
@@ -186,7 +166,6 @@ const ItemBox = () => {
         <TabCenter>
           {
             MenuData.map(data => {
-
               return (
                 <MenuItem key={data.id} onMouseOver={(e) => menuClick(e)}>
                   {data.icon}
@@ -196,10 +175,8 @@ const ItemBox = () => {
             })
           }
           <TabLine ref={linkbar}></TabLine>
-
-          
         </TabCenter>
-        <ShowItem index={index}/>
+        <ShowItem index={index} />
 
       </TabBox>
 

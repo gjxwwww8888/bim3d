@@ -6,7 +6,7 @@ import ListInfo from './ListInfo'
 const List = styled.div`
 
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #eee;
     z-index: 1;
 

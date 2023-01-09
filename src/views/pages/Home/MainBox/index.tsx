@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import ButtonGroup from './ButtonGroup'
-import IconGroup from '../Footer/IconGroup'
 import Introduce from './Introduce'
 
 const Main = styled.div`
@@ -40,9 +39,7 @@ const MainBox: React.FC = () => {
           <IntroduceBox>
             <Introduce />
             <ButtonGroup />
-            {/* <IconGroup /> */}
           </IntroduceBox>
-
         </Container>
       </Main>
     </>
