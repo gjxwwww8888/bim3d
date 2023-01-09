@@ -11,29 +11,29 @@ const routerConfig = [
         path: '/',
         element: <Home />,
     },
-    {
-        path: '/example',
-        element: <Example />
-    },
-    {
-        path: '/document',
-        element: <Document />
-    },
-    {
-        path: '/course',
-        element: <Course />
-    },
-    {
-        path: '/editor',
-        element: <Editor />,
-    },
-    {
-        path: '/middle',
-        element: <MiddleGround />
-    },
-    {
-        path: '/login',
-        element: <Login />
-    }
+    // {
+    //     path: '/example',
+    //     element: <Example />
+    // },
+    // {
+    //     path: '/document',
+    //     element: <Document />
+    // },
+    // {
+    //     path: '/course',
+    //     element: <Course />
+    // },
+    // {
+    //     path: '/editor',
+    //     element: <Editor />,
+    // },
+    // {
+    //     path: '/middle',
+    //     element: <MiddleGround />
+    // },
+    // {
+    //     path: '/login',
+    //     element: <Login />
+    // }
 ];
 export default routerConfig;

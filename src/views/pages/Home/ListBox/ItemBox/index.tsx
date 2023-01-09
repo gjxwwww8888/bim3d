@@ -1,3 +1,7 @@
+import bim from '@/assets/image/bg/bim.jpg'
+import fame from '@/assets/image/bg/fame.jpg'
+import home from '@/assets/image/bg/home.jpg'
+import screen from '@/assets/image/bg/screen.jpg'
 import bgimg from '@/assets/image/bg/bg.jpg'
 import { Building } from '@styled-icons/bootstrap/Building'
 import { Flower2 } from '@styled-icons/bootstrap/Flower2'
@@ -117,15 +121,15 @@ const MenuData = [
 ]
 
 const infoData = [
-  { title: 'BIM建模 结构一览无余', text: '在线cad解析，可承载数十万个建筑结构，每个墙面，每个柱子都能流畅清晰的展现', imgurl: bgimg },
-  { title: '智能家装 设计出图快人一步', text: '开源免费的家装设计解决方案，设计出图一键搞定。', imgurl: bgimg },
-  { title: '数字大屏 展示演讲一步到位', text: '提供大屏适配方案，给你无限可能', imgurl: bgimg },
-  { title: '智慧城市 规划设计尽在掌握', text: '展示街道和城市规划，可查看全国城市数据', imgurl: bgimg },
-  { title: '助力物联 万物互通 ', text: '物联网下一个时代的风口', imgurl: bgimg },
-  { title: '工厂生产 实时数据展示，监控生产每个细节', text: '对接工厂数据，实时展示生产细节', imgurl: bgimg },
-  { title: '数字农业 实时展示自动化培育生产环节', text: '自动化，机械化，智能温控，未来农业科技的典范', imgurl: bgimg },
+  { title: 'BIM建模 结构一览无余', text: '在线cad解析，可承载数十万个建筑结构，每个墙面，每个柱子都能流畅清晰的展现', imgurl: bim },
+  { title: '智能家装 设计出图快人一步', text: '开源免费的家装设计解决方案，设计出图一键搞定。', imgurl: home },
+  { title: '数字大屏 展示演讲一步到位', text: '提供大屏适配方案，给你无限可能', imgurl: screen },
+  { title: '智慧城市 规划设计尽在掌握', text: '展示街道和城市规划，可查看全国城市数据', imgurl: screen },
+  { title: '助力物联 万物互通 ', text: '物联网下一个时代的风口', imgurl: screen },
+  { title: '工厂生产 实时数据展示，监控生产每个细节', text: '对接工厂数据，实时展示生产细节', imgurl: screen },
+  { title: '数字农业 实时展示自动化培育生产环节', text: '自动化，机械化，智能温控，未来农业科技的典范', imgurl: fame },
   { title: '畅游游戏世界 体验虚拟人生', text: '不止页游 跨平台才是游戏的未来！', imgurl: bgimg },
-  { title: 'AI 导航 实时的地图路线规划', text: '提供地图导航的前端解决方案。', imgurl: bgimg }
+  { title: 'AI 导航 实时的地图路线规划', text: '提供地图导航的前端解决方案。', imgurl: screen }
 ]
 
 const ShowItem = (props) => {
