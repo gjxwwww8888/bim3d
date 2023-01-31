@@ -9,9 +9,17 @@ class Editor extends React.Component {
 
     editorview = React.createRef<HTMLDivElement>();
 
+    constructor(props){
+
+        super(props);
+        
+        
+    }
+
     componentDidMount(): void {
         console.log("editor mount")
 
+       
         if (this.container) {
             BIM.container = this.container.current;
             BIM.SC.scene.mountedMainScene();
