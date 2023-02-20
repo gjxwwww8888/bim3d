@@ -1,6 +1,3 @@
-import ReactDom from "./views/App";
+import ReactDom from "./views/Views";
 
 new ReactDom();
-
-
-

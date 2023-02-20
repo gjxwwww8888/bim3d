@@ -80,19 +80,9 @@ See the full list of [our backers](https://gitee.com/songmy1093697597/bim3d-edit
 假设你已经克隆了本仓库，可以从main.tsx开始直接修改使用:
 
 ```jsx
-import App from '@/views/App';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
-import '@/assets/style/index.css';
+import ReactDom from "./views/Views";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <HashRouter>
-      <App/>
-    </HashRouter>
-  </React.StrictMode>
-)
+new ReactDom();
 ```
 
 目前仍处于开发版本，更多的细节请star本项目并Fork.也可以打开预览地址：https://mengyusong.github.io/bim3d-editor/ 查看最新的进度。
@@ -216,19 +206,9 @@ See the full list of [our backers](https://gitee.com/songmy1093697597/bim3d-edit
 Assuming that you have cloned this repository, you can directly modify it from main.tsx:
 
 ```jsx
-import App from '@/views/App';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
-import '@/assets/style/index.css';
+import ReactDom from "./views/Views";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <HashRouter>
-      <App/>
-    </HashRouter>
-  </React.StrictMode>
-)
+new ReactDom();
 ```
 
 It is still in the development version. For more details, please click star and fork. You can also open the preview address: https://mengyusong.github.io/bim3d-editor/ View the latest progress.

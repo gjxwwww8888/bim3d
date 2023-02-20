@@ -1,10 +1,18 @@
+import React from 'react'
+import Footer from './footer/HomeFooter';
+import HeaderBox from './header/HomeHeader';
+import ListBox from './listbox/HomeListBox';
+import MainBox from './mainbox/HomeMainBox';
 
-const Home = () => {
-  return (
-    <>
-        <div className="container mx-auto w-full"></div>
-    </>
-  )
+const Home: React.FC = () => {
+    return (
+        <>
+            <HeaderBox />
+            <MainBox />
+            <ListBox />
+            <Footer />
+        </>
+    )
 }
 
-export default Home
+export default Home;
