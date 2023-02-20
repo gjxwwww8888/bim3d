@@ -53,7 +53,7 @@ const ButtonGroup: React.FC = () => {
     let navigate = useNavigate();
     function gotoEditor() {
         // 3d
-        new BIM().startUp();
+        // new BIM().startUp();
         navigate('/editor')
     }
 
