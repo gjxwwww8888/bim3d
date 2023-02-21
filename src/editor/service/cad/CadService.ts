@@ -1,6 +1,5 @@
 import ServiceBase from "@/editor/base/server/ServiceBase";
 import CadCtrl from "@/editor/plugin/cad/CadCtrl";
-import { service } from "@/libs/const/enum";
 
 /**
  * @description cad底图服务

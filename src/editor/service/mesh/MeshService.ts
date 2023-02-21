@@ -1,6 +1,4 @@
-import BIM from "@/editor/BIM";
 import ServiceBase from "@/editor/base/server/ServiceBase";
-import { service } from "@/libs/const/enum";
 import DrawMesh from "@/editor/plugin/mesh/DrawMesh";
 
 /**

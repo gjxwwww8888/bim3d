@@ -1,8 +1,6 @@
-import BIM from '@/editor/BIM';
 // import { toggleTheme } from '@/views/store/user';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MenuBox = styled.div`
@@ -61,6 +59,8 @@ const MenuButton = styled.button`
 `;
 
 
+import { useNavigate } from 'react-router-dom';
+
 
 const menudata = [
     
@@ -89,13 +89,13 @@ const Menu: React.FC = () => {
         let label = (e.target as any).innerHTML;
         switch (label) {
             case '科技城市':
-                navigate('/course')
+                // navTo('/course')
                 break;
             case '数字孪生':
-                navigate('/document')
+                // navTo('/document')
                 break
             case '智能家装':
-                navigate('/example')
+                // navTo('/example')
                 break;
             case '编辑器':
                 dealEditor();

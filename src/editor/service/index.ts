@@ -12,4 +12,12 @@ export default class Service {
         ServiceManager.RegSer(service.MESH_SERVICE, new MeshFactory());
       
     }
+
+    static dispose():void {
+        ServiceManager.ins.removeService(service.CAD_SERVICE);
+        ServiceManager.ins.removeService(service.SCENE_SERVICE);
+        ServiceManager.ins.removeService(service.MESH_SERVICE);
+        // ServiceManager.RegSer(service.SCHEME_SERVICE, new SchemeFactory());
+       
+    }
 }

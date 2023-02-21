@@ -1,8 +1,5 @@
 import BIM from "@/editor/BIM";
-import LoadUtils from "@/editor/framework/utils/LoadUtils";
-import { ColorDef } from "@/libs/const/enum";
-import { BIMEvent } from "@/libs/const/event";
-import { AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, OrthographicCamera, Raycaster, RGBFormat, Scene, SphereGeometry, sRGBEncoding, TextureLoader, Vec2, Vector2, WebGLRenderer } from "three";
+import { AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, OrthographicCamera, Raycaster, Scene, SphereGeometry, sRGBEncoding, Vector2, WebGLRenderer } from "three";
 import { Line2 } from "three/examples/jsm/lines/Line2";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";

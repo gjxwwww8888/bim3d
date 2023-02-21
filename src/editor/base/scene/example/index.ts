@@ -1,4 +1,4 @@
-import { BoxGeometry, BufferAttribute, DirectionalLight, DoubleSide, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
+import { BoxGeometry, BufferAttribute, DirectionalLight, DoubleSide, Float32BufferAttribute, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
 
 export default class ExampleScene {
 
@@ -48,7 +48,7 @@ export default class ExampleScene {
         let mat = new MeshPhongMaterial({
             vertexColors: true
         });
-        const colors = (box.getAttribute('position').array as any).slice();
+        const colors = ((box.getAttribute('position') as any).array).slice();
         for (let i = 0, l = colors.length; i < l; i++) {
 
             if (colors[i] > 0) colors[i] = 0.5;

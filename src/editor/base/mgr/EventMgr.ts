@@ -2,7 +2,6 @@ import BIM from "@/editor/BIM";
 import { Event } from "@/editor/framework/event/Event";
 import { Keyboard } from "@/editor/framework/event/Keyboard";
 import { KeyBoardManager } from "@/editor/framework/event/KeyBoardManager";
-import { UIEvent } from "@/libs/const/enum";
 
 /**
  * @description 全局事件管理类
@@ -21,12 +20,12 @@ export default class EventMgr implements IMgr {
     }
 
     private addEvent():void {
-        BIM.ED.on(UIEvent.LEFT_MENU_ITEM_CLICK, this, this.leftMenuClick);
+        BIM.ED.on(BIMEvent.LEFT_MENU_ITEM_CLICK, this, this.leftMenuClick);
         BIM.ED.on(Event.KEY_DOWN, this, this.onkeydown);
     }
 
     private removeEvent():void {
-        BIM.ED.off(UIEvent.LEFT_MENU_ITEM_CLICK, this, this.leftMenuClick);
+        BIM.ED.off(BIMEvent.LEFT_MENU_ITEM_CLICK, this, this.leftMenuClick);
         BIM.ED.off(Event.KEY_DOWN, this, this.onkeydown);
     }
 

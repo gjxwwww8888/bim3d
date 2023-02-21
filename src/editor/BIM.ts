@@ -28,7 +28,7 @@ export default class BIM {
 
     static fontJson:any = fontjson;
 
-    startUp(): void {
+   static startUp(): void {
         console.log('BIM start up.')
         // 初始化服务
         Service.init();
@@ -42,11 +42,13 @@ export default class BIM {
         this.startRenderLoop();
     }
 
-    exit(): void {
-        console.log('BIM exit.')
+    static exit(): void {
+        console.log('BIM exit. start dispose 3d data...')
+        // TODO：销毁3d所有数据
+        Service.dispose();
     }
 
-    startRenderLoop(): void {
+    static startRenderLoop(): void {
         // 渲染
         BIM.MGR.render.render();
         // 动画帧
@@ -54,7 +56,7 @@ export default class BIM {
     }
 
     /** 窗口尺寸变化 */
-    onWindowResize(): void {
+    static onWindowResize(): void {
         console.log('windows resize');
         BIM.MGR.scene.onResize();
     }

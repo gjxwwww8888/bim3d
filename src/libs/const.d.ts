@@ -33,10 +33,7 @@ declare const enum ColorDef {
 }
 
 
-declare const enum UIEvent {
-    /** 点击左侧菜单栏 */
-    LEFT_MENU_ITEM_CLICK = 'left-menu-item-click',
-}
+
 
 declare const enum CurMode {
     /** 默认：透视 */

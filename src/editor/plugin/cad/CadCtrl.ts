@@ -1,11 +1,11 @@
 import BIM from "@/editor/BIM";
 import MathUtils from "@/editor/framework/math/MathUtils";
 import MeshUtils from "@/editor/framework/utils/MeshUtils";
-import { CADColors, CADTypes } from "@/libs/const/cad";
+
 import { Color, Group, Vector3 } from "three";
-import CadMgr from "./CadMgr";
 import caddata from '../../../assets/json/basemap.json';
-import { IdcDef } from "@/libs/const/enum";
+import { CADColors, CADTypes } from "./CadConst";
+import CadMgr from "./CadMgr";
 
 export default class CadCtrl implements IDispose{
 

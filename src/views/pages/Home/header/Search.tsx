@@ -1,6 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
 
 const SearchContainer = styled.div`
     
@@ -46,9 +45,9 @@ const LoginBtn = styled.button`
 
 const Search = () => {
 
-    let navigate = useNavigate();
+   
     const loginClick = () => {
-        navigate('/login')
+        // navTo('/login')
     };
 
     return (

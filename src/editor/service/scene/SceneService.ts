@@ -1,6 +1,5 @@
-import BIM from "@/editor/BIM";
 import ServiceBase from "@/editor/base/server/ServiceBase";
-import { service } from "@/libs/const/enum";
+import BIM from "@/editor/BIM";
 
 /**
  * @description 场景服务

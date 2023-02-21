@@ -1,4 +1,3 @@
-import BIM from '@/editor/BIM'
 import { ViewInAr } from '@styled-icons/material-outlined/ViewInAr'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -50,11 +49,11 @@ const ViewInArIcon = styled(ViewInAr)`
 
 const ButtonGroup: React.FC = () => {
 
-    let navigate = useNavigate();
-    function gotoEditor() {
-        // 3d
-        // new BIM().startUp();
-        navigate('/editor')
+    let navTo = useNavigate();
+
+    const gotoEditor = ()=> {
+        // 3d        
+        navTo('/editor');
     }
 
     return (

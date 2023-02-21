@@ -1,7 +1,4 @@
-
-import { TCState } from "@/libs/const/enum";
 import { MOUSE, OrthographicCamera, PerspectiveCamera, Quaternion, Vector2, Vector3 } from "three";
-
 
 /**
  * @description 视角翻转控制器

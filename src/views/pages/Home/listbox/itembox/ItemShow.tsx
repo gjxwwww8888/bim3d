@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 
@@ -91,16 +90,11 @@ const SP = styled.span`
 
 
 const ItemShow = (props) => {
-    let navigate = useNavigate();
+    
    
 
     const onBtnClick = (label)=>{
-        navigate('/editor');
-        // switch(label){
-        //     case '0':
-        //         navigate('/middle');
-        //         break;
-        // }
+  
     }
 
     return (

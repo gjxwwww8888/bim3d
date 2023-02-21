@@ -1,7 +1,5 @@
 import BIM from "@/editor/BIM";
 import CameraTween from "@/editor/framework/tween/CameraTween";
-import { IdcDef } from "@/libs/const/enum";
-import { BIMEvent } from "@/libs/const/event";
 import { Vector3 } from "three";
 import ExampleScene from "../scene/example";
 import IdcScene from "../scene/indicator";

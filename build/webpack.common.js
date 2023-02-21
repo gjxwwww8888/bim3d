@@ -36,7 +36,7 @@ module.exports = {
                 test: /\.(ts|tsx)$/,
                 include: [path.resolve(__dirname, '../src')],
                 enforce: 'pre',
-                use: ['thread-loader', 'babel-loader']
+                use: [ 'babel-loader', 'ts-loader']
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)$/,

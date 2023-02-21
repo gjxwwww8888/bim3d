@@ -1,9 +1,9 @@
-import { BufferGeometry, Color, DoubleSide, Line, LineBasicMaterial, LineLoop, Mesh, MeshBasicMaterial, Object3D, ShapeBufferGeometry, Vector3 } from "three";
-import { Font } from "three/examples/jsm/loaders/FontLoader";
-import { CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer";
+import { BufferGeometry, Color, DoubleSide, Line, LineBasicMaterial, LineLoop, Mesh, MeshBasicMaterial, Object3D, ShapeGeometry, Vector3 } from "three";
 import { Line2 } from "three/examples/jsm/lines/Line2";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
+import { Font } from "three/examples/jsm/loaders/FontLoader";
+import { CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer";
 
 export default class MeshUtils {
     /**
@@ -64,7 +64,7 @@ export default class MeshUtils {
                 side: DoubleSide,
             });
 
-            let geometry = new ShapeBufferGeometry(shapes);
+            let geometry = new ShapeGeometry(shapes);
             geometry.computeBoundingBox();
 
             return new Mesh(geometry, matLite);
