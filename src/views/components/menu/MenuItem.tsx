@@ -9,10 +9,12 @@ const MenuBox = styled.div`
     width: 60px;
     height: 80px;
     margin: 5px;
-    color: white;
-    background-color: rgb(54,54,54);
+    color: black;
+    font-size: 12px;
+    background-color: #ddd;
+    border-radius: 10px;
     &:hover{
-        background-color: rgb(100,100,100);
+        background-color: #eee;
     }
 `
 
