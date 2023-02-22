@@ -6,4 +6,6 @@ declare const enum BIMEvent {
     CAMERA_TARGET_CHANGE = 'camera_target_change',
 
     MESH_CENTER_CHANGE = 'mesh_center_change',
+
+    RENDER_UPDATE = 'render_update',
 }

@@ -1,4 +1,5 @@
 import BIM from '@/editor/BIM'
+import StatePanel from '@/views/components/panel/StatePanel'
 import React from 'react'
 import styled from 'styled-components'
 import LeftPanel from './leftpanel/LeftPanel'
@@ -83,6 +84,7 @@ class Editor extends React.Component {
                 <IdcBox>
 
                 </IdcBox>
+                <StatePanel></StatePanel>
             </>
         )
     }
