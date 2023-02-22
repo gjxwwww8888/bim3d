@@ -29,6 +29,17 @@ module.exports = merge(common, {
         },
     },
 
+    // 缓存
+    cache: {
+        type: 'filesystem',
+        buildDependencies: {
+            config: [__filename],
+        },
+        cacheDirectory: path.resolve(__dirname, '../temp_cache'),
+        name: 'scf-cache',
+        compression: 'gzip',
+    },
+
     plugins: [
         // 开启react模块热替换插件
         new ReactRefreshWebpackPlugin(),

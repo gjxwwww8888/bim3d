@@ -15,20 +15,20 @@ export default class RenderMgr implements IMgr {
 
         const scenemgr = BIM.MGR.scene;
         // 渲染编辑器
-        if (scenemgr.main.render) {
-            scenemgr.main.render.render(scenemgr.main.scene, scenemgr.main.camera);
+        if ( scenemgr.editor.render) {
+             scenemgr.editor.render.render( scenemgr.editor.scene,  scenemgr.editor.camera);
             if (scenemgr.idc) {
                 scenemgr.idc.changeFace();
-                scenemgr.idc.camera.position.copy(scenemgr.main.camera.position.clone().sub(scenemgr.main.controls.target));
+                scenemgr.idc.camera.position.copy( scenemgr.editor.camera.position.clone().sub( scenemgr.editor.controls.target));
                 scenemgr.idc.camera.updateProjectionMatrix();
-                scenemgr.idc.camera.lookAt(scenemgr.main.scene.position);
+                scenemgr.idc.camera.lookAt( scenemgr.editor.scene.position);
 
                 scenemgr.idc.render.render(scenemgr.idc.scene, scenemgr.idc.camera);
             }
 
         }
-        if (scenemgr.main.css2dRender) {
-            scenemgr.main.css2dRender.render(scenemgr.main.scene, scenemgr.main.camera);
+        if ( scenemgr.editor.css2dRender) {
+             scenemgr.editor.css2dRender.render( scenemgr.editor.scene,  scenemgr.editor.camera);
         }
         // 渲染示例
         if (scenemgr.example.render) {

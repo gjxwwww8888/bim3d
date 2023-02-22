@@ -97,13 +97,12 @@ export default class MeshUtils {
      * @param className 
      * @returns 
      */
-    static createCss2DPointer(pos: Vector3, className:string): CSS2DObject {
+    static createCss2DPointer(className:string): CSS2DObject {
 
         let div = document.createElement('div');
         div.className = className;
 
         let label = new CSS2DObject(div);
-        label.position.set(pos.x, pos.y, pos.z);
 
         return label;
     }

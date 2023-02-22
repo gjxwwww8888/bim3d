@@ -7,9 +7,6 @@ import BIM from "@/editor/BIM";
  */
 export default class SceneService extends ServiceBase implements ISceneSrevice {
     
-
-    
-
     constructor() {
         super(service.SCENE_SERVICE);
         
@@ -40,6 +37,6 @@ export default class SceneService extends ServiceBase implements ISceneSrevice {
     }
 
     grideShow(visible: boolean): void {
-        BIM.MGR.scene.main.grideShow(visible);
+        BIM.MGR.scene.editor.grideShow(visible);
     }
 }

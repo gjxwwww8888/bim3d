@@ -1,8 +1,10 @@
+import MeshUtils from "@/editor/framework/utils/MeshUtils";
 import { BoxGeometry, BufferAttribute, Color, DirectionalLight, GridHelper, HemisphereLight, LineBasicMaterial, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
-import { CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer";
-import TrackCameraCtrl from "../../ctrl/TrackCameraCtrl";
+import { CSS2DObject, CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer";
+import TrackCameraCtrl from "../ctrl/TrackCameraCtrl";
 
-export default class MainScene {
+
+export default class EditorScene {
 
     /** 场景 */
     private _scene: Scene;
@@ -22,6 +24,10 @@ export default class MainScene {
     /** 辅助网格 */
     private _grid: GridHelper;
 
+    private _sight:CSS2DObject;
+
+    private _box: Mesh;
+
     get camera(): any {
         return this._camera;
     }
@@ -33,8 +39,6 @@ export default class MainScene {
     get controls(): any {
         return this._controls;
     }
-
-    private _box: Mesh;
 
     get scene(): Scene {
         return this._scene;
@@ -52,6 +56,8 @@ export default class MainScene {
         this.addGrid();
 
         this.addBox();
+
+        this.addSight();
         this.createRender();
         this.createCSS2DRender();
 
@@ -62,10 +68,24 @@ export default class MainScene {
         this._grid.visible = visible;
     }
 
+    sightShow(visible: boolean): void{
+        this._sight.visible = visible;
+    }
+
+    sightPos(pos: Vector3): void{
+        this._sight.position.copy(pos);
+    }
+
     private createScene(): void {
         this._scene = new Scene();
         this._scene.background = new Color(0xd2d3d6)
 
+    }
+
+    private addSight():void {
+        this._sight = MeshUtils.createCss2DPointer('sight');
+        this._scene.add(this._sight);
+        this._sight.visible = false;
     }
 
     private addBox(): void {

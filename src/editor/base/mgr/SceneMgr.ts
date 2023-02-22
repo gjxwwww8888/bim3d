@@ -1,15 +1,15 @@
 import BIM from "@/editor/BIM";
 import CameraTween from "@/editor/framework/tween/CameraTween";
 import { Vector3 } from "three";
+import EditorScene from "../scene/EditorScene";
 import ExampleScene from "../scene/example";
 import IdcScene from "../scene/indicator";
-import MainScene from "../scene/main";
 
 
 export default class SceneMgr implements IMgr{
 
 
-    private _main:MainScene;
+    private _editor:EditorScene;
 
     private _example:ExampleScene;
 
@@ -25,8 +25,8 @@ export default class SceneMgr implements IMgr{
         this._center.set(v.x, v.y, v.z);
     }
 
-    get main() {
-        return this._main;
+    get editor() {
+        return this._editor;
     }
 
     get example() {
@@ -39,26 +39,28 @@ export default class SceneMgr implements IMgr{
 
     startUp(): void {
         console.log('scene mgr start up')    
-        this._main = new MainScene();
+        this._editor = new EditorScene();
         this._example = new ExampleScene();
         this._idc = new IdcScene();
 
         this._center = new Vector3(0, 1.5, 0);
 
+        BIM.ED.on(BIMEvent.CAMERA_TARGET_CHANGE, this, this.onCameraTargetChange);
         BIM.ED.on(BIMEvent.IDC_POINTER_DOWN, this, this.onIdcPointerDwon);
     }
 
     dispose(): void {
         BIM.ED.off(BIMEvent.IDC_POINTER_DOWN, this, this.onIdcPointerDwon);
+        BIM.ED.off(BIMEvent.CAMERA_TARGET_CHANGE, this, this.onCameraTargetChange);
     }
 
     onResize():void {
-        if(this._main)this._main.onResize();
+        if(this._editor)this._editor.onResize();
     }
 
     mountedMainScene():void {
-        BIM.container.appendChild(this._main.render.domElement);
-        BIM.container.appendChild(this._main.css2dRender.domElement);
+        BIM.container.appendChild(this._editor.render.domElement);
+        BIM.container.appendChild(this._editor.css2dRender.domElement);
     }
 
     mountedExampleScene():void {
@@ -74,9 +76,14 @@ export default class SceneMgr implements IMgr{
         if(this._example)this._example.update();
     }
 
+    onCameraTargetChange(center: Vector3):void {
+        this._editor.sightShow(center != null);
+        this._editor.sightPos(center);
+    }
+
     onIdcPointerDwon(index:number, dis:number = 10):void {
         console.log("点击了面：", index);
-        this._main.camera.up.set(0, 1, 0);
+        this._editor.camera.up.set(0, 1, 0);
         let newC: Vector3 = new Vector3();
         let EPS = 0.001;
 
@@ -176,7 +183,7 @@ export default class SceneMgr implements IMgr{
     }
 
     showTween(newC: Vector3, newT: Vector3, time: number = 1000, callBack?: Function): void {
-        CameraTween.animateCamera(this._main.camera, this._main.controls, this._main.camera.position,
-            this._main.controls.target, newC, newT, time, callBack);
+        CameraTween.animateCamera(this._editor.camera, this._editor.controls, this._editor.camera.position,
+            this._editor.controls.target, newC, newT, time, callBack);
     }
 }

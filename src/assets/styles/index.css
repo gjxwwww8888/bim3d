@@ -28,3 +28,9 @@ a {
     padding: 0;
     z-index: 100;
 }
+
+.sight {
+    width: 26px;
+    height: 26px;
+    content: url('../image/sight.png'); 
+}

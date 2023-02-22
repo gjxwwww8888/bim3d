@@ -1,3 +1,6 @@
+import BIM from "@/editor/BIM";
+import { Event } from "@/editor/framework/event/Event";
+import { Keyboard } from "@/editor/framework/event/Keyboard";
 import { MOUSE, OrthographicCamera, PerspectiveCamera, Quaternion, Vector2, Vector3 } from "three";
 
 /**
@@ -58,14 +61,7 @@ export default class TrackCameraCtrl implements IDispose {
 
     constructor(camera: any, domElement: any, renderDom: any) {
 
-        if (domElement === undefined) {
-            console.warn('TrackCameraCtrl: domElement is undefined.');
-        }
-        if (domElement === document) {
-            console.error('TrackCameraCtrl: Please use "renderer.domElement" instead.');
-        }
         this._rendDom = renderDom;
-
         this.camera = camera;
         this.domElement = domElement;
         // 禁用触摸滚动
@@ -208,10 +204,10 @@ export default class TrackCameraCtrl implements IDispose {
         this.domElement.addEventListener('wheel', this.mouse_wheel, {
             passive: false
         });
-        // BIM.ED.on(Event.KEY_DOWN, this, this.keydown);
-        // BIM.ED.on(Event.KEY_UP, this, this.keyup);
+        BIM.ED.on(Event.KEY_DOWN, this, this.keydown);
+        BIM.ED.on(Event.KEY_UP, this, this.keyup);
 
-        // BIM.ED.on(EventDef.MESH_CENTER_CHANGE, this, this.onMeshCenterChange);
+        BIM.ED.on(BIMEvent.MESH_CENTER_CHANGE, this, this.onMeshCenterChange);
     }
 
     private removeEve(): void {
@@ -221,15 +217,15 @@ export default class TrackCameraCtrl implements IDispose {
         this.domElement.removeEventListener('wheel', this.mouse_wheel);
         this.domElement.removeEventListener('pointermove', this.pointer_move);
         this.domElement.removeEventListener('pointerup', this.pointer_up);
-        // BIM.ED.off(Event.KEY_DOWN, this, this.keydown);
-        // BIM.ED.off(Event.KEY_UP, this, this.keyup);
-        // BIM.ED.off(EventDef.MESH_CENTER_CHANGE, this, this.onMeshCenterChange);
+        BIM.ED.off(Event.KEY_DOWN, this, this.keydown);
+        BIM.ED.off(Event.KEY_UP, this, this.keyup);
+        BIM.ED.off(BIMEvent.MESH_CENTER_CHANGE, this, this.onMeshCenterChange);
     }
 
-    // private onMeshCenterChange(center: Vector3): void {
-    //     this._meshCenter = center;
-    //     BIM.ED.event(EventDef.CAMERA_TARGET_CHANGE, center);
-    // }
+    private onMeshCenterChange(center: Vector3): void {
+        this._meshCenter = center;
+        BIM.ED.event(BIMEvent.CAMERA_TARGET_CHANGE, center);
+    }
 
     private handleResize(): void {
         this.screen.left = 0;
@@ -684,40 +680,40 @@ export default class TrackCameraCtrl implements IDispose {
         this.removePointer(event);
     }
 
-    // private keydown(event: any): void {
-    //     if (this.enabled === false) return;
+    private keydown(event: any): void {
+        if (this.enabled === false) return;
 
-    //     let needsUpdate = true;
-    //     switch (event.keyCode) {
-    //         case Keyboard.W:
-    //             this.panCameraByKey(4);
-    //             break;
-    //         case Keyboard.S:
-    //             if (!event.ctrlKey) {
-    //                 this.panCameraByKey(5);
-    //             }
-    //             break;
-    //         case Keyboard.A:
-    //             this.panCameraByKey(0);
-    //             break;
-    //         case Keyboard.D:
-    //             this.panCameraByKey(1);
-    //             break;
-    //         case Keyboard.Q:
-    //             this.panCameraByKey(2);
-    //             break;
-    //         case Keyboard.E:
-    //             this.panCameraByKey(3);
-    //             break;
-    //         default:
-    //             needsUpdate = false;
-    //             break;
-    //     }
-    //     if (needsUpdate) {
-    //         event.preventDefault();
-    //         this.update()
-    //     }
-    // }
+        let needsUpdate = true;
+        switch (event.keyCode) {
+            case Keyboard.W:
+                this.panCameraByKey(4);
+                break;
+            case Keyboard.S:
+                if (!event.ctrlKey) {
+                    this.panCameraByKey(5);
+                }
+                break;
+            case Keyboard.A:
+                this.panCameraByKey(0);
+                break;
+            case Keyboard.D:
+                this.panCameraByKey(1);
+                break;
+            case Keyboard.Q:
+                this.panCameraByKey(2);
+                break;
+            case Keyboard.E:
+                this.panCameraByKey(3);
+                break;
+            default:
+                needsUpdate = false;
+                break;
+        }
+        if (needsUpdate) {
+            event.preventDefault();
+            this.update()
+        }
+    }
 
     private keyup(): void {
         if (this.enabled === false) return;

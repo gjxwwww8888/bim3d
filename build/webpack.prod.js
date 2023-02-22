@@ -43,18 +43,18 @@ module.exports = merge(common, {
                 `${path.join(__dirname, '../src')}/**/*.tsx`,
                 `${path.join(__dirname, '../public')}/index.html`
             ]),
-            safelist: {
-                standard: [/^ant-/], // 过滤以ant-开头的类名，哪怕没用到也不删除
-            }
+            // safelist: {
+            //     standard: [/^ant-/], // 过滤以ant-开头的类名，哪怕没用到也不删除
+            // }
         }),
         // 打包生成gzip插件
-        new CompressionPlugin({
-            test: /\.(js|css)$/, // 只生成css,js压缩文件
-            filename: '[path][base].gz', // 文件命名
-            algorithm: 'gzip', // 压缩格式，默认是gzip
-            threshold: 10240, // 只有大小大于该值的资源会被处理。默认值是 10k
-            minRatio: 0.8 // 压缩率,默认值是 0.8
-        })
+        // new CompressionPlugin({
+        //     test: /\.(js|css)$/, // 只生成css,js压缩文件
+        //     filename: '[path][base].gz', // 文件命名
+        //     algorithm: 'gzip', // 压缩格式，默认是gzip
+        //     threshold: 10240, // 只有大小大于该值的资源会被处理。默认值是 10k
+        //     minRatio: 0.8 // 压缩率,默认值是 0.8
+        // })
     ],
     // 优化配置
     optimization: {
@@ -74,7 +74,16 @@ module.exports = merge(common, {
             }),
         ],
         splitChunks: { // 分隔代码
+            chunks: 'all', // 三个枚举值： async 异步加载导入的模块 import('module').then() ; initial 直接import导入的模块 ; all 包含上述两种情况
+            minSize: 20000, // 生成chunk最小的大小
+            enforceSizeThreshold: 50000, // 当chunk的大小超过此值将强制拆分
             cacheGroups: {
+                common: {
+                    name: "common", // 指定包名，不指定时使用上层key作为包名
+                    chunks: "all",
+                    minSize: 10,
+                    priority: 0
+                },
                 vendors: { // 提取node_modules代码
                     test: /node_modules/, // 只匹配node_modules里面的模块
                     name: 'vendors', // 提取文件命名为vendors,js后缀和chunkhash会自动加
@@ -83,13 +92,6 @@ module.exports = merge(common, {
                     minSize: 0, // 提取代码体积大于0就提取出来
                     priority: 10, // 提取优先级为1
                 },
-                commons: { // 提取页面公共代码
-                    name: 'commons', // 提取文件命名为commons
-                    minChunks: 2, // 只要使用两次就提取出来
-                    chunks: 'all', // 只提取初始化就能获取到的模块，不管异步的
-                    minSize: 0, // 提取代码体积大于0就提取出来
-                    priority: 0
-                }
             }
         }
     },

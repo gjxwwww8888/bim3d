@@ -61,11 +61,11 @@ export default class CadCtrl implements IDispose{
         let layerData = [];
         for (let [key, value] of this._mgr.layers) {
 
-            BIM.MGR.scene.main.scene.add(value[1]);
+            BIM.MGR.scene.editor.scene.add(value[1]);
             layerData.push({ name: key, color: value[0] });
         }
         BIM.MGR.scene.center = center;
-        BIM.MGR.scene.main.controls.target = center.clone();
+        BIM.MGR.scene.editor.controls.target = center.clone();
         BIM.MGR.scene.onIdcPointerDwon(IdcDef.TOP);
       
       
