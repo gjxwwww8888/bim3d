@@ -19,7 +19,12 @@ interface ISceneSrevice {
 }
 
 interface IMeshService {
-
+    /** 绘制 */
+    drawMeshByType(mode): void;
+    /** 退出绘制 */
+    exitDrawMesh(mode: any): void;
+    /**  根据uuid获取模型 */
+    getMeshFormId(uuid: string);
 }
 
 interface IDispose {
@@ -52,7 +57,7 @@ interface IStatePanel {
     triangles: number,
     points: number,
     lines: number,
-    fps: number|string[],
-    ms: number|string[],
-    mb: number|string[]
+    fps: number | string[],
+    ms: number | string[],
+    mb: number | string[]
 }
