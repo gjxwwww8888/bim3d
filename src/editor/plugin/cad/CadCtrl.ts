@@ -1,7 +1,6 @@
 import BIM from "@/editor/BIM";
 import MathUtils from "@/editor/framework/math/MathUtils";
 import MeshUtils from "@/editor/framework/utils/MeshUtils";
-
 import { Color, Group, Vector3 } from "three";
 import caddata from '../../../assets/json/basemap.json';
 import { CADColors, CADTypes } from "./CadConst";
