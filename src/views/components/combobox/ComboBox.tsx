@@ -5,21 +5,18 @@ import styled from 'styled-components'
 const Container = styled.div<{ pleft?: string }>`
     overflow: hidden;
     position: absolute;
-    top: 49px;
+    top: 48px;
     /* left: 0px; */
     margin-left: ${props => props.pleft};
     width: 140px;
     height: 0px;
-    /* background-color: white; */
-    background-color: rgba(225, 225, 225, 0.8);
-    backdrop-filter: blur(2px);
-    /* box-shadow: 0 0 3px rgb(102, 102, 102); */
+    background-color: rgb(38, 38, 38);
+    box-shadow: 0 0 3px rgb(102, 102, 102);
     text-align: left;
     line-height: 40px;
     transition-duration: 300ms;
     z-index: 1000;
-    color: black;
-    border-radius: 5px;
+    color: #ccc;
     ul{
         list-style: none;
         padding: 0;
@@ -34,8 +31,8 @@ const MenuItem = styled.li`
     left: 0;
     top: 0;
     &:hover {
-        color: #444;
-        background-color: #f5f3f3;
+        color: #fff;
+        background-color: rgb(242, 112, 19);
     }
 `
 const LabelItem = styled.span`

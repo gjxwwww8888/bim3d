@@ -7,9 +7,7 @@ const IdcPanelBox = styled.div`
     left: 0;
     width: 240px;
     height: 250px;
-    background-color: rgba(224, 224, 224, 0.7);
-    backdrop-filter: blur(2px);
-    border-radius: 10px;
+    background-color: rgb(54,54,54);
 `
 
 const IdcPanel = () => {

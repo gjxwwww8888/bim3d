@@ -4,18 +4,17 @@ import styled from 'styled-components'
 const TitleBox = styled.div`
     width: 100%;
     height: 40px;
-    background-color: rgba(200, 200, 200, 0.7);
-    backdrop-filter: blur(2px);
-    border-radius: 8px 8px 0 0;
+    background-color: rgb(54,54,54);
+    border-radius: 5px;
 `
 
 const TitleLabel = styled.span`
     margin-left: 10px;
     width: 100%;
-    color:black;
+    color:white;
     font-size: 15px;
     line-height: 40px;
-    /* background-color:  #f3f3f3; */
+    background-color: rgb(54,54,54);
 `
 
 const TitleItem = (props:any) => {

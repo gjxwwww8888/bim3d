@@ -16,7 +16,7 @@ const TopBox = styled.div`
 `
 const LeftBox = styled.div`
     position: fixed;
-    top: 50px;
+    top: 48px;
     left: 0px;
     width: 288px;
     height: calc(100vh - 48px);
@@ -25,7 +25,7 @@ const LeftBox = styled.div`
 
 const RightBox = styled.div`
     position: fixed;
-    top: 50px;
+    top: 48px;
     right: 0px;
     width: 240px;
     height: calc(100vh - 48px);

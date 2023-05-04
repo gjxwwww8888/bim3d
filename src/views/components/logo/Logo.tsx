@@ -1,17 +1,17 @@
-import logoimg from '@/assets/image/bim.png';
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import { Sketch } from '@styled-icons/boxicons-logos/Sketch'
+import styled from 'styled-components'
 
 interface LogoClor {
-    primary: boolean;
+  primary:boolean;
 }
 
 const LogoBox = styled.div<LogoClor>`
     display: flex;
     align-items: center;
     height: 100%;
-    width: 100%;
-    color: ${props => props.primary ? 'black' : 'white'};
+    /* width: 100%; */
+    color: ${props=>props.primary?'black':'white'};
     font-size: 1.2rem;
     line-height: 1.57;
     font-family: "Public Sans", sans-serif;
@@ -21,27 +21,25 @@ const LogoBox = styled.div<LogoClor>`
     
 `
 
+const BlueSketch = styled(Sketch)`
+  color: rgb(242, 112, 19);
+  margin: 0 5px;
+`
+
 const LogoLabel = styled.span`
-   color: rgb(48, 47, 47);
+   color: rgb(242, 112, 19);
 `
 
-const LogoIcon = styled.div`
-  width: 32px;
-  height: 32px;
-  background-size: 26px;
-  background-repeat:no-repeat;
-  background-image: url(${logoimg});
-`
+const Logo = (props:any) => {
+  return (
+    <>
+      <LogoBox {...props}>
+        <BlueSketch title='Sketch Icon' size='32' />
+        <LogoLabel>Bim3dEditor</LogoLabel>
+      </LogoBox>
 
-const Logo = (props: any) => {
-    return (
-        <>
-            <LogoBox {...props}>
-                <LogoIcon />
-                <LogoLabel>Bim3dEditor</LogoLabel>
-            </LogoBox>
-        </>
-    )
+    </>
+  )
 }
 
 export default Logo
