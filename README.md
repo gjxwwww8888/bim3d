@@ -14,10 +14,6 @@
 
 - [_Turf.js_](https://turfjs.org/) 是一个地理空间分析库，处理各种地图算法,使用可读性高的Javascript函数处理GeoJSON.
 
-目前以解析的cad示例，可通过编辑器顶部栏->导入->导入cad 进行查看：
-
-![avatar](/src/assets/image/cad.png)
-
 项目预览地址: https://mengyusong.github.io/bim3d-editor/
 
 <div align="center">
