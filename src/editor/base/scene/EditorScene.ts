@@ -78,7 +78,7 @@ export default class EditorScene {
 
     private createScene(): void {
         this._scene = new Scene();
-        this._scene.background = new Color(0x333333)
+        this._scene.background = new Color(0xd2d3d6)
 
     }
 
@@ -134,7 +134,7 @@ export default class EditorScene {
     }
 
     private addGrid():void {
-        this._grid = new GridHelper(50, 50, 0x222222, 0x111111);
+        this._grid = new GridHelper(50, 50, 0xffffff, 0xffffff);
         (this._grid.material as LineBasicMaterial).opacity = 0.6;
         (this._grid.material as LineBasicMaterial).transparent = true;
         this._grid.position.set(0, 0, 0);

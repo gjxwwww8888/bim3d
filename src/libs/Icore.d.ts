@@ -1,38 +1,29 @@
 interface ICadService {
-    testCad():void;
+    testCad(): void;
 }
 
 interface ISchemeService {
-    
+
 }
 
 interface ISceneSrevice {
-    mountedMainScene():void;
+    mountedMainScene(): void;
 
-    mountedPanel():void;
+    mountedPanel(): void;
 
-    mountedExampleScene():void;
+    mountedExampleScene(): void;
 
-    mountedIdcScene():void;
+    mountedIdcScene(): void;
 
-    grideShow(visible:boolean):void;
+    grideShow(visible: boolean): void;
 }
 
 interface IMeshService {
-<<<<<<< HEAD
-    
-=======
-    /** 绘制 */
-    drawMeshByType(mode): void;
-    /** 退出绘制 */
-    exitDrawMesh(mode: any): void;
-    /**  根据uuid获取模型 */
-    getMeshFormId(uuid: string);
->>>>>>> 7c96a0381e5f920f71988fd1ff58d33c29c437d3
+
 }
 
 interface IDispose {
-    dispose():void;
+    dispose(): void;
 }
 
 /** 启动 */
@@ -41,20 +32,18 @@ interface IStartUp {
     startUp(): void;
 }
 
-interface IExit  extends IDispose{
+interface IExit extends IDispose {
     /** 退出 */
-    exit():void;
+    exit(): void;
 }
 
-interface IMgr extends IStartUp, IDispose{
+interface IMgr extends IStartUp, IDispose {
 
 }
 
 interface IPlugin extends IStartUp, IExit {
 
 }
-<<<<<<< HEAD
-=======
 
 
 interface IStatePanel {
@@ -63,8 +52,7 @@ interface IStatePanel {
     triangles: number,
     points: number,
     lines: number,
-    fps: number | string[],
-    ms: number | string[],
-    mb: number | string[]
+    fps: number|string[],
+    ms: number|string[],
+    mb: number|string[]
 }
->>>>>>> 7c96a0381e5f920f71988fd1ff58d33c29c437d3

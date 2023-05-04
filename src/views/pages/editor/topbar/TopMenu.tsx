@@ -14,6 +14,7 @@ const MenuBox = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+ 
 `
 
 const MenuItem = styled.div<{ menuh?: string }>`
@@ -25,14 +26,16 @@ const MenuItem = styled.div<{ menuh?: string }>`
     padding: 0 20px;
     min-width: 24px;
     height: 100%;
-    color: #ccc;
+    color: black;
     font-size: 10px;
     /* text-align: center; */
     /* line-height: 48px; */
+  
     cursor: pointer;
     &:hover{
-        color: #fff;
-        background-color: rgb(242, 112, 19);
+        color: #5e5e5e;
+        background-color: rgba(224, 224, 224, 0.7);
+       
 
         div {
             height: ${props => props.menuh};
@@ -42,26 +45,26 @@ const MenuItem = styled.div<{ menuh?: string }>`
 `
 
 const NewIcon = styled(New)`
-    color: #fff;
+    color: black;
     margin: 2px 0px;
 `
 
 const ImportIcon = styled(Import)`
-    color: #fff;
+    color: black;
     margin: 2px 0px;
 `
 
 const ExportIcon = styled(Export)`
-    color: #fff;
+    color: black;
     margin: 2px 0px;
 `
 
 const RulerIcon = styled(Ruler)`
-    color: #fff;
+    color: black;
     margin: 2px 0px;
 `
 const ClearIcon = styled(Clear)`
-    color: #fff;
+    color: black;
     margin: 2px 0px;
 `
 

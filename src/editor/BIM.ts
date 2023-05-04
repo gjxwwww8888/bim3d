@@ -9,18 +9,16 @@ import fontjson from '../assets/json/song_regular.json'
  */
 export default class BIM {
 
-    /** 绘制模式 */
-    static draw: number;
     /** 当前控制模式 */
     static mode: number;
     /** 3D编辑器主容器 */
     static container: any;
     /** 示例容器 */
-    static example: any;
+    static example:any;
     /** UI主容器 */
-    static uicontainer: any;
+    static uicontainer:any;
     /** idc容器 */
-    static idc: any;
+    static idc:any;
     /** 管理 */
     static readonly MGR: Imgr = new Imgr();
     /** 全局服务容器 */
@@ -28,9 +26,9 @@ export default class BIM {
     /** 全局事件派发 */
     static readonly ED: EventDispatcher = new EventDispatcher();
 
-    static fontJson: any = fontjson;
+    static fontJson:any = fontjson;
 
-    static startUp(): void {
+   static startUp(): void {
         console.log('BIM start up.')
         // 初始化服务
         Service.init();

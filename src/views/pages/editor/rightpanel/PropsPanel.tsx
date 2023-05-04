@@ -9,11 +9,12 @@ const PropsPanelBox = styled.div`
     width: 100%;
     height: 100%;
     margin-top: 2px;
-    color: white;
+    color: black;
     text-align: left;
     line-height: 40px;
-    background-color: rgb(38,38,38);
-    border-radius: 5px;
+    background-color: rgba(224, 224, 224, 0.7);
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
 `
 
 const PropsBox = styled.div`

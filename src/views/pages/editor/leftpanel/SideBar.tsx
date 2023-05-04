@@ -10,10 +10,12 @@ import { changeItem } from '@/views/store/editor'
 const SideBarBox = styled.div`
     width: 48px;
     height: 100%;
-    background-color: rgb(18,18,18);
+    background-color: rgba(224, 224, 224, 0.7);
+    backdrop-filter: blur(2px);
+    border-radius: 10px 0 0 10px ;
 `
 const LeftMenuItem = styled.button`
-    margin: 0;
+    margin: 10px 0 0 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -21,32 +23,33 @@ const LeftMenuItem = styled.button`
     justify-content: center;
     width: 100%;
     height: 60px;
-    color: white;
-    font-size: 12px;
+    color: black;
+    font-size: 14px;
     border: 0;
-    background-color:rgb(18,18,18);
+    background-color: rgba(225, 225, 225, 0.8);
+    backdrop-filter: blur(2px);
     &:hover{
-        background-color:rgb(54,54,54);
+        background-color:#e4e4e4;
     }
     &:focus{
-        background-color:rgb(38,38,38);
+        background-color:rgba(220, 220, 220, 0.7);
     }
 `
 
 const Building2Icon = styled(Building2)`
-    color: white;
+    color: black;
     
 `
 const ImageEditIcon = styled(ImageEdit)`
-    color: white;
+    color: black;
 
 `
 const MoleculeIcon = styled(Molecule)`
-    color: white;
+    color: black;
 
 `
 const TextParagraphIcon = styled(TextParagraph)`
-    color: white;
+    color: black;
 
 `
 

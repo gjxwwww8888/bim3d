@@ -1,5 +1,3 @@
-import BIM from "@/editor/BIM";
-
 export default class MeshMgr implements IMgr{
 
     startUp(): void {
@@ -9,6 +7,4 @@ export default class MeshMgr implements IMgr{
     dispose(): void {
         
     }
-
-    
 }

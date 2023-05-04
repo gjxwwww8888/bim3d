@@ -12,7 +12,10 @@ const TopBarBox = styled.div`
   justify-content: space-between;
   width: 100vw;
   height: 48px;
-  background-color: rgb(18,18,18);
+  background-color: rgba(225,225,225,0.7);
+  color: black;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
 `
 
 const TopBar = () => {

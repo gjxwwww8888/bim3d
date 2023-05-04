@@ -86,17 +86,3 @@ declare const enum IdcDef {
     EDGE_BOTTOM_BACK,
     EDGE_BOTTOM_LEFT
 }
-
-
-export const enum DrawType {
-    /** 墙 */
-    wall,
-    /** 梁 */
-    beam,
-    /** 方柱 */
-    pillar,
-    /** 圆柱 */
-    cylinder,
-    /** 楼板 */
-    floor
-}
