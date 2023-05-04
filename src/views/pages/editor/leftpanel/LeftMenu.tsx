@@ -10,9 +10,8 @@ import styled from 'styled-components'
 const LeftMenuBox = styled.div`
   width: 220px;
   height: 100%;
-  background-color: rgba(200, 200, 200, 0.7);
-  backdrop-filter: blur(2px);
-  border-radius: 0 10px 10px 0;
+  background-color: rgb(38,38,38);
+  border-radius: 0 5px 5px 0;
 `
 
 const BIMMenuBox = styled.div`
@@ -20,12 +19,12 @@ const BIMMenuBox = styled.div`
   /* justify-content: center; */
   flex-flow: row wrap;
   width: 100%;
-  margin-top: 10px;
+  /* margin: 10px; */
   
 `
 
 const Building2Icon = styled(Building2)`
-    color: black;
+    color: white;
 
 `
 

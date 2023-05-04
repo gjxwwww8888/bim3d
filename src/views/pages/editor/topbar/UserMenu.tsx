@@ -15,21 +15,21 @@ const UserBox = styled.div`
 `
 
 const UserItem = styled.div<{menuh?:string}>`
-    display: flex;
+     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
     min-width: 24px;
     height: 100%;
-    color: black;
+    color: #ccc;
     font-size: 10px;
     /* text-align: center;
     line-height: 48px; */
     cursor: pointer;
     &:hover{
-        color: #5e5e5e;
-        background-color: #e4e4e4;
+        color: #fff;
+        background-color: rgb(242, 112, 19);
         div {
             height: ${props => props.menuh};
         }
@@ -37,17 +37,17 @@ const UserItem = styled.div<{menuh?:string}>`
 `
 
 const SettingsIcon = styled(Settings)`
-    color: black;
+    color: #fff;
     margin: 2px 0px;
 `
 
 const HelpCircleIcon = styled(Help)`
-    color: black;
+    color: #fff;
     margin: 2px 0px;
 `
 
 const UserIcon = styled(Users)`
-    color: black;
+    color: #fff;
     margin: 2px 0px;
 `
 
