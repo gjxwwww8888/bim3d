@@ -14,6 +14,10 @@ export default class ExampleScene {
 
     private _box: Mesh;
 
+    get box() {
+        return this._box;
+    }
+
     get scene(): Scene {
         return this._scene;
     }
@@ -27,8 +31,8 @@ export default class ExampleScene {
     }
 
     constructor() {
-        this._viewWidth = 1620;
-        this._viewHeight = 969;
+        this._viewWidth = window.innerWidth;
+        this._viewHeight = window.innerHeight;
 
         this.createScene();
         this.createPCamera();

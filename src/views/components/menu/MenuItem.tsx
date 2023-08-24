@@ -1,3 +1,4 @@
+import BIM from '@/editor/BIM'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -25,7 +26,7 @@ const MenuItem = (props:any) => {
     const onMenuClick = (e:any)=>{
         let menuLabel = e.target.innerText;
         console.log('点击了'+menuLabel);
-        // BIM.ED.event(UIEvent., [menuLabel]);
+        BIM.ED.event(BIMEvent.LEFT_SUB_MENU_MODLE_CLICK, [menuLabel]);
     }
 
     return (

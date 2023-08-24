@@ -8,4 +8,6 @@ declare const enum BIMEvent {
     MESH_CENTER_CHANGE = 'mesh_center_change',
 
     RENDER_UPDATE = 'render_update',
+
+    LEFT_SUB_MENU_MODLE_CLICK = 'left-sub-menu-model-click',
 }

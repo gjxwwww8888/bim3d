@@ -4,6 +4,7 @@ import { Vector3 } from "three";
 import EditorScene from "../scene/EditorScene";
 import ExampleScene from "../scene/example";
 import IdcScene from "../scene/indicator";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 
 export default class SceneMgr implements IMgr{
@@ -47,11 +48,29 @@ export default class SceneMgr implements IMgr{
 
         BIM.ED.on(BIMEvent.CAMERA_TARGET_CHANGE, this, this.onCameraTargetChange);
         BIM.ED.on(BIMEvent.IDC_POINTER_DOWN, this, this.onIdcPointerDwon);
+        BIM.ED.on(BIMEvent.LEFT_SUB_MENU_MODLE_CLICK, this, this.onLeftSubMenuClcik)
     }
 
     dispose(): void {
         BIM.ED.off(BIMEvent.IDC_POINTER_DOWN, this, this.onIdcPointerDwon);
         BIM.ED.off(BIMEvent.CAMERA_TARGET_CHANGE, this, this.onCameraTargetChange);
+        BIM.ED.off(BIMEvent.LEFT_SUB_MENU_MODLE_CLICK, this, this.onLeftSubMenuClcik)
+    }
+
+    onLeftSubMenuClcik(meunitem:string){
+        console.log("scene mgr click event:", meunitem);
+
+        let scene = this._editor.scene;
+        // // 移除初始的七彩盒子
+        // scene.remove(this._editor.box);
+        // 测试模型加载
+        new GLTFLoader()
+        .setPath( 'models/gltf/' )
+        .load( 'SheenChair.glb', function ( gltf ) {
+            gltf.scene.position.set(3,0,0)
+            scene.add( gltf.scene );
+        } );
+
     }
 
     onResize():void {
