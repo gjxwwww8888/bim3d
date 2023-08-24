@@ -10,9 +10,6 @@
 
 - [_React_](https://reactjs.org) 是一个流行的免费的开源前端JavaScript库，用于基于UI组件快速构建用户界面。
 
-- [_Material UI_](https://mui.com/material-ui/getting-started/overview/) 是一个用于构建谷歌系统样式的全面的组件库 [Material Design](https://material.io/design/introduction/) .
-
-- [_Turf.js_](https://turfjs.org/) 是一个地理空间分析库，处理各种地图算法,使用可读性高的Javascript函数处理GeoJSON.
 
 项目预览地址: https://mengyusong.github.io/bim3d-editor/
 
@@ -135,10 +132,6 @@ new ReactDom();
 - [_Three.js_](https://threejs.org) Tis a cross-browser JavaScript library and application programming interface (API) used to create and display animated 3D computer graphics in a web browser using WebGL.
 
 - [_React_](https://reactjs.org) s a free and open-source front-end JavaScript library for building user interfaces based on UI components. 
-
-- [_Material UI_](https://mui.com/material-ui/getting-started/overview/) is a comprehensive library of components that features our implementation of Google's [Material Design](https://material.io/design/introduction/) system.
-
-- [_Turf.js_](https://turfjs.org/) is a geospatial analysis library, which processes various map algorithms and uses highly readable JavaScript functions to process geojson.
 
 Project preview address: https://mengyusong.github.io/bim3d-editor/
 
