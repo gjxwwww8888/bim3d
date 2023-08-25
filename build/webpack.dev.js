@@ -35,7 +35,7 @@ module.exports = merge(common, {
         buildDependencies: {
             config: [__filename],
         },
-        cacheDirectory: path.resolve(__dirname, '../temp_cache'),
+        cacheDirectory: path.resolve(__dirname, '../cache'),
         name: 'scf-cache',
         compression: 'gzip',
     },
