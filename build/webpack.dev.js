@@ -30,15 +30,15 @@ module.exports = merge(common, {
     },
 
     // 缓存
-    cache: {
-        type: 'filesystem',
-        buildDependencies: {
-            config: [__filename],
-        },
-        cacheDirectory: path.resolve(__dirname, '../cache'),
-        name: 'scf-cache',
-        compression: 'gzip',
-    },
+    // cache: {
+    //     type: 'filesystem',
+    //     buildDependencies: {
+    //         config: [__filename],
+    //     },
+    //     cacheDirectory: path.resolve(__dirname, '../cache'),
+    //     name: 'scf-cache',
+    //     compression: 'gzip',
+    // },
 
     plugins: [
         // 开启react模块热替换插件
