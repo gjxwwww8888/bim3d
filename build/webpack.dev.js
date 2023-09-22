@@ -15,7 +15,7 @@ module.exports = merge(common, {
     },
 
     devServer: {
-        port: 3000, // 服务端口号
+        port: 5183, // 服务端口号
         compress: false, // gzip压缩，开发环境不开启，提升速度
         historyApiFallback: true, // 解决路由跳转404问题
         hot: true,

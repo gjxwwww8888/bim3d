@@ -88,19 +88,19 @@ const Menu: React.FC = () => {
     const menuClick = (e: React.MouseEvent) => {
         let label = (e.target as any).innerHTML;
         switch (label) {
-            case '科技城市':
-                // navTo('/course')
+            case '文档':
+                navigate('/doc')
                 break;
-            case '数字孪生':
+            case 'API':
                 // navTo('/document')
                 break
-            case '智能家装':
-                // navTo('/example')
+            case '示例':
+                navigate('/webgpu')
                 break;
-            case '编辑器':
+            case '赞助':
                 dealEditor();
                 break;
-            case 'theme':
+            case '合作开发':
                 // changeTheme();
                 break;
             default:

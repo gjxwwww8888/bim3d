@@ -91,12 +91,12 @@ const SP = styled.span`
 
 
 const ItemShow = (props) => {
-    
+
     const navigate = useNavigate();
 
-    const onBtnClick = (label)=>{
+    const onBtnClick = (label) => {
         console.log(label)
-        switch(label){
+        switch (label) {
             case "3":
                 navigate('/smartcity');
                 break;
@@ -112,7 +112,7 @@ const ItemShow = (props) => {
                         <BP> {props.title}</BP>
                         <SP> {props.text}</SP>
 
-                        <NormalButton onClick={()=>onBtnClick(props.label)}>开始设计</NormalButton>
+                        <NormalButton onClick={() => onBtnClick(props.label)}>开始设计</NormalButton>
                     </ItemInfoBox>
                 </ItemInfo>
             </ItemContainer>

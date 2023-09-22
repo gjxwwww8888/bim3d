@@ -74,7 +74,11 @@ module.exports = {
                 generator: {
                     filename: 'static/media/[name].[contenthash:6][ext]', // 文件输出目录和命名
                 },
-            }
+            },
+            {
+                test: /\.(wgsl)$/,
+                type: 'asset/source',  
+            },
         ]
     },
     resolve: {
