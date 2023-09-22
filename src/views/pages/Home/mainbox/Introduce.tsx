@@ -33,7 +33,7 @@ const Introduce: React.FC = () => {
   return (
     <>
       <TP>一站式</TP>
-      <BP> 开源WebGL3D项目 </BP>
+      <BP> 开源 WebGPU3D项目 </BP>
       <SP>Bim3dEditor 使用流行的前端框架 React.js 和优秀的3D库 Three.js 打造在线可编辑的3D可视化工具。</SP>
     </>
   )
