@@ -76,7 +76,8 @@ const LFData = [
     { id: 0, label: "triangle" },
     { id: 1, label: "rectangle" },
     { id: 2, label: "box" },
-    { id: 3, label: "ball" }
+    { id: 3, label: "ball" },
+    { id: 4, label: "colors" }
 ]
 
 
