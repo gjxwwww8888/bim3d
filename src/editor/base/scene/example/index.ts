@@ -1,4 +1,4 @@
-import { BoxGeometry, BufferAttribute, DirectionalLight, DoubleSide, Float32BufferAttribute, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
+import { BoxGeometry, BufferAttribute, DirectionalLight, DisplayP3ColorSpace, DoubleSide, Float32BufferAttribute, HemisphereLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, SRGBColorSpace, sRGBEncoding, Vector3, WebGLRenderer } from "three";
 
 export default class ExampleScene {
 
@@ -96,7 +96,7 @@ export default class ExampleScene {
         this._render.setSize(this._viewWidth, this._viewHeight);
         // 设置设备的物理像素比
         // this._render.setPixelRatio(window.devicePixelRatio);
-        this._render.outputEncoding = sRGBEncoding;
+        this._render.outputColorSpace = SRGBColorSpace;
     }
 
 

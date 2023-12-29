@@ -1,5 +1,5 @@
 import BIM from "@/editor/BIM";
-import { AmbientLight, BoxGeometry, Mesh, MeshBasicMaterial, OrthographicCamera, Raycaster, Scene, SphereGeometry, sRGBEncoding, Vector2, WebGLRenderer } from "three";
+import { AmbientLight, BoxGeometry, DisplayP3ColorSpace, Mesh, MeshBasicMaterial, OrthographicCamera, Raycaster, Scene, SphereGeometry, SRGBColorSpace, sRGBEncoding, Vector2, WebGLRenderer } from "three";
 import { Line2 } from "three/examples/jsm/lines/Line2";
 import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
 import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
@@ -75,7 +75,7 @@ import { LineMaterial } from "three/examples/jsm/lines/LineMaterial";
         // 设置设备的物理像素比
         this._glrender.setPixelRatio(window.devicePixelRatio);
         // 是否渲染阴影
-        this._glrender.outputEncoding = sRGBEncoding;
+        this._glrender.outputColorSpace = SRGBColorSpace;
 
 
     }

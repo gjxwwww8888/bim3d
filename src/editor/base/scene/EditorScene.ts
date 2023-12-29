@@ -1,5 +1,5 @@
 import MeshUtils from "@/editor/framework/utils/MeshUtils";
-import { BoxGeometry, BufferAttribute, Color, DirectionalLight, GridHelper, HemisphereLight, LineBasicMaterial, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, sRGBEncoding, Vector3, WebGLRenderer } from "three";
+import { BoxGeometry, BufferAttribute, Color, DirectionalLight, DisplayP3ColorSpace, GridHelper, HemisphereLight, LineBasicMaterial, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, SRGBColorSpace, sRGBEncoding, Vector3, WebGLRenderer } from "three";
 import { CSS2DObject, CSS2DRenderer } from "three/examples/jsm/renderers/CSS2DRenderer";
 import TrackCameraCtrl from "../ctrl/TrackCameraCtrl";
 
@@ -123,12 +123,12 @@ export default class EditorScene {
     /** 添加光 */
     private createLight(): void {
         // 环境光，全局光照
-        const hemiLight = new HemisphereLight(0xffffff, 0x33333, 0.6);
+        const hemiLight = new HemisphereLight(0xcccccc, 0x33333, 2);
         hemiLight.position.set(0, 200, 0);
         this._scene.add(hemiLight);
 
         // 添加平行光,用来模拟太阳光
-        let dirLight = new DirectionalLight(0xffffff, 0.6);
+        let dirLight = new DirectionalLight(0xffffff, 4);
         dirLight.position.set(0, 100, 100);
         this._scene.add(dirLight);
     }
@@ -159,7 +159,7 @@ export default class EditorScene {
         this._render.setSize(window.innerWidth, window.innerHeight);
         // 设置设备的物理像素比
         this._render.setPixelRatio(window.devicePixelRatio);
-        this._render.outputEncoding = sRGBEncoding;
+        this._render.outputColorSpace = SRGBColorSpace;
     }
 
     onResize(): void {
