@@ -1,9 +1,0 @@
-import ServiceFactoryBase from "@/editor/base/server/ServiceFactoryBase";
-import CadService from "./CadService";
-
-export default class CadFactory extends ServiceFactoryBase
-{
-    constructor() {
-        super(service.CAD_SERVICE, CadService);
-    }
-}
