@@ -44,7 +44,7 @@ const HomeHeader = () => {
 						borderRadius: '32px',
 						height: '64px'
 					}}>
-						<BimLogo></BimLogo>
+						<BimLogo color='white'></BimLogo>
 					</Box>
 					<Box sx={{
 						display: 'flex',
