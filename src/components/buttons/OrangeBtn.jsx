@@ -1,6 +1,7 @@
 import { Button, ThemeProvider, createTheme } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import BIM from '../../pages/editor/core/BIM';
 
 const theme = createTheme({
     palette: {

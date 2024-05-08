@@ -12,10 +12,12 @@ const CanvasEditor = () => {
 
 		if(canvasFather.current){
 			console.log("start mounted editor canvas");
-			// 挂载编辑器
-			BIM.bimcontainer = canvasFather.current;
 
-			
+			BIM.init();
+			// 挂载编辑器
+			BIM.container = canvasFather.current;
+
+			BIM.MGR.sceneMgr.mountedMainScene();
 		}
 
 		return ()=>{
@@ -30,9 +32,8 @@ const CanvasEditor = () => {
 			display:'flex',
 			margin:0,
 			padding:0,
-			width:'100vw',
-			height:'100vh',
-			bgcolor:'yellow',
+			width:'100%',
+			height:'100%',
 			zIndex: 0
 		}} ref={canvasFather}></Box>
 	)
