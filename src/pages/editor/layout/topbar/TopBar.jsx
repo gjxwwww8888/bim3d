@@ -19,7 +19,7 @@ const TopBar = () => {
             height: '48px',
             margin: '0',
             padding: '0',
-            bgcolor: 'white',
+            bgcolor: '#222',
             zIndex: 1000,
         }}>
             <Box sx={{
@@ -27,7 +27,7 @@ const TopBar = () => {
                 left: '60px',
                 height: '48px'
             }}>
-                <BimLogo color='#555'></BimLogo>
+                <BimLogo color='#ccc'></BimLogo>
             </Box>
 
             <Box sx={{

@@ -42,7 +42,7 @@ const TopMenuBtn = (props) => {
 
     return (
         <>
-            <IconButton disabled={disable} aria-label={props.arialabel} sx={{ flexDirection: 'column', fontSize: '12px', margin: '0 10px' }} onClick={btnClicked}>
+            <IconButton disabled={disable} aria-label={props.arialabel} sx={{ flexDirection: 'column', fontSize: '12px', margin: '0 10px' , color:'#ccc'}} onClick={btnClicked}>
                 {props.icon}
                 {props.label}
             </IconButton>

@@ -34,13 +34,13 @@ export default class EditorScene {
         const size = 1000;
         const divisions = 100;
 
-        const gridHelper = new GridHelper(size, divisions);
+        const gridHelper = new GridHelper(size, divisions, 0x555555, 0x444444);
         this.scene.add(gridHelper);
     }
 
     createScene() {
         this.scene = new Scene();
-        this.scene.background = new Color(0xddf0e6);
+        this.scene.background = new Color(0x333333);
     }
 
     createPCamera() {
@@ -50,7 +50,7 @@ export default class EditorScene {
     }
 
     createLight() {
-        const hemiLight = new HemisphereLight(0xffffff, 0xcccccc, 3);
+        const hemiLight = new HemisphereLight(0xffffff, 0x333333, 3);
         hemiLight.position.set(0, 300, 0);
         this.scene.add(hemiLight);
 

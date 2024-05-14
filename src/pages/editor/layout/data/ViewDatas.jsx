@@ -7,6 +7,10 @@ import VerticalAlignBottomOutlinedIcon from '@mui/icons-material/VerticalAlignBo
 import VerticalAlignTopOutlinedIcon from '@mui/icons-material/VerticalAlignTopOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
+import CollectionsOutlinedIcon from '@mui/icons-material/CollectionsOutlined';
+import Face6OutlinedIcon from '@mui/icons-material/Face6Outlined';
+import WallpaperOutlinedIcon from '@mui/icons-material/WallpaperOutlined';
 
 export const topMenuData = [
     { key:0, arialabel: 'import', icon: <VerticalAlignBottomOutlinedIcon />, label: '导入' },
@@ -21,4 +25,12 @@ export const topMenuData = [
 export const topMenuRightData = [
     { key:0, arialabel: 'setting', icon: <SettingsOutlinedIcon />, label: '设置' },
     { key:1, arialabel: 'user', icon: <AccountCircleOutlinedIcon />, label: '用户' }
+];
+
+export const leftSideMenuData = [
+    { id: 0, value: "struct", ariaLabel: "struct", icons: <BusinessOutlinedIcon />, itemlabel: "结构" },
+    { id: 1, value: "material", ariaLabel: "material", icons: <CollectionsOutlinedIcon />, itemlabel: "材质" },
+    { id: 2, value: "model", ariaLabel: "model", icons: <Face6OutlinedIcon />, itemlabel: "模型" },
+    { id: 3, value: "drawing", ariaLabel: "drawing", icons: <WallpaperOutlinedIcon />, itemlabel: "图纸" },
+   
 ];
