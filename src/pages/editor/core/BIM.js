@@ -15,6 +15,8 @@ export default class BIM {
 
 	static timer = new Timer(false);
 
+	static MODE = 0;
+
 	static init() {
 		console.log('init BIM framework.')
 

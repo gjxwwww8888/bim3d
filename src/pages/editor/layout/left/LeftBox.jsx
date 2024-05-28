@@ -8,7 +8,7 @@ const LeftBox = () => {
             position: 'fixed',
             top: '48px',
             left: '0px',
-            width: '320px',
+            width: '294px',
             height: 'calc(100vh - 48px)',
             display: 'flex',
             flexDirection: 'row',

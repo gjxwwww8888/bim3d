@@ -34,3 +34,15 @@ export const leftSideMenuData = [
     { id: 3, value: "drawing", ariaLabel: "drawing", icons: <WallpaperOutlinedIcon />, itemlabel: "图纸" },
    
 ];
+
+export const structMenuData = [
+    {id: 0, value: "wall", ariaLabel: "墙",select:false},
+    {id: 1, value: "beam", ariaLabel: "梁",select:false},
+    {id: 2, value: "pillar", ariaLabel: "方柱",select:false},
+    {id: 4, value: "cylinder", ariaLabel: "圆柱",select:false},
+    {id: 3, value: "floor", ariaLabel: "楼板",select:false},
+    {id: 5, value: "stairs", ariaLabel: "楼梯",select:false},
+    {id: 6, value: "door", ariaLabel: "门",select:false},
+    {id: 7, value: "window", ariaLabel: "窗",select:false},
+ 
+]

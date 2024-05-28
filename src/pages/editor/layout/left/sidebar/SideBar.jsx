@@ -1,6 +1,7 @@
 import { Box, Tab, Tabs, ThemeProvider, Typography, createTheme } from '@mui/material';
 import React from 'react';
 import { leftSideMenuData } from '../../data/ViewDatas';
+import StructItem from './struct/StructItem';
 
 const theme = createTheme({
     palette: {
@@ -74,7 +75,7 @@ const SideBar = () => {
             </Box>
             <Box sx={{ bgcolor: '#444', display: 'flex', height: "100%" }}>
                 <TabPanel value={value} index={0}>
-                    
+                    <StructItem/>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     Item Two
