@@ -2,6 +2,9 @@ import { Box, Tab, Tabs, ThemeProvider, Typography, createTheme } from '@mui/mat
 import React from 'react';
 import { leftSideMenuData } from '../../data/ViewDatas';
 import StructItem from './struct/StructItem';
+import ModelItem from './model/ModelItem';
+import DrawingItem from './drawings/DrawingItem';
+import MaterialItem from './material/MaterialItem';
 
 const theme = createTheme({
     palette: {
@@ -75,16 +78,16 @@ const SideBar = () => {
             </Box>
             <Box sx={{ bgcolor: '#444', display: 'flex', height: "100%" }}>
                 <TabPanel value={value} index={0}>
-                    <StructItem/>
+                    <StructItem />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    Item Two
+                    <MaterialItem />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    Item Three
+                    <ModelItem />
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                    Item Four
+                    <DrawingItem />
                 </TabPanel>
             </Box>
         </Box>
